@@ -227,7 +227,8 @@ h1, h2, h3 {
 
 .profile-image-box {
     width: 100%;
-    height: 300px;
+    aspect-ratio: 4 / 5;
+    height: auto;
     border-radius: 12px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -238,6 +239,7 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
 }
 
 .profile-name {
@@ -304,6 +306,7 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
 }
 
 .role-tag {
@@ -503,10 +506,23 @@ h1, h2, h3 {
     line-height: 1.8;
 }
 
+/* CTA Section */
+#cta {
+    padding: 100px 0;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .grid-3, .grid-2 {
         grid-template-columns: 1fr;
+    }
+    #music-support .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+    #moving-team .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
     .hero .main-headline {
         font-size: 2.2rem;
@@ -518,5 +534,112 @@ h1, h2, h3 {
     .cta-btn {
         width: 100%;
         max-width: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    section, #cta {
+        padding: 60px 0;
+    }
+    .hero {
+        padding: 80px 0 60px;
+    }
+    .hero .main-headline {
+        font-size: 2rem;
+    }
+    .tagline-main {
+        font-size: 1.4rem;
+    }
+    .tagline-sub {
+        font-size: 0.95rem;
+    }
+    .badge-group, .industry-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    .section-title-badge {
+        font-size: 1rem;
+        padding: 6px 16px;
+    }
+    .intro-card h3 {
+        font-size: 1.3rem;
+    }
+    .profile-image-box {
+        aspect-ratio: 4 / 5;
+    }
+    /* Keeping Music Support 3-columns inline */
+    #music-support .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    .mini-profile-card {
+        padding: 15px 5px;
+    }
+    .mini-profile-image {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+    .mini-profile-card .profile-name {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+    .mini-profile-card .profile-details {
+        font-size: 0.65rem;
+    }
+    .mini-profile-card .role-tag {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
+    /* Keeping Moving Team 2-columns inline */
+    #moving-team .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    #moving-team .card {
+        padding: 20px 15px;
+    }
+    #moving-team .profile-name {
+        font-size: 1.1rem !important;
+    }
+    #moving-team .catchphrase {
+        font-size: 0.8rem !important;
+    }
+    #moving-team .profile-details {
+        font-size: 0.75rem !important;
+    }
+    #moving-team .message-box {
+        font-size: 0.75rem;
+        padding: 10px;
+    }
+    #moving-team .team-label {
+        font-size: 0.7rem;
+        padding: 2px 8px;
+        margin-bottom: 10px;
+    }
+    /* Rest of mobile layout */
+    .company-row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+    .company-label {
+        margin-bottom: 8px;
+        color: var(--color-navy);
+        width: 100%;
+    }
+    .promo-box {
+        padding: 40px 20px;
+    }
+    .promo-heading {
+        font-size: 1.4rem;
+    }
+    .cta-btn {
+        padding: 15px 20px;
+    }
+    .cta-btn-value {
+        font-size: 1.2rem;
     }
 }
