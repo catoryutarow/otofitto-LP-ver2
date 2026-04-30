@@ -1,0 +1,522 @@
+:root {
+    --color-navy: #1f1d36;
+    --color-gold: #f4bf1f;
+    --color-purple: #7c5cff;
+    --color-bg-light: #f8f9fa;
+    --color-bg-white: #ffffff;
+    --color-card-grey: #f0f2f5;
+    --color-text-main: #333333;
+    --color-text-muted: #666666;
+    --color-text-white: #ffffff;
+    
+    --container-width: 1000px;
+    --section-spacing: 80px;
+    --border-radius: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    background-color: var(--color-bg-white);
+    color: var(--color-text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Sections */
+section {
+    padding: var(--section-spacing) 0;
+}
+
+.section-navy {
+    background-color: var(--color-navy);
+    color: var(--color-text-white);
+}
+
+.section-light {
+    background-color: var(--color-bg-light);
+}
+
+.section-white {
+    background-color: var(--color-bg-white);
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+.text-gold { color: var(--color-gold); }
+.text-center { text-align: center; }
+
+/* Badges */
+.badge-purple {
+    display: inline-block;
+    background-color: rgba(124, 92, 255, 0.8);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.section-title-badge {
+    display: table;
+    margin: 0 auto 40px;
+    background-color: rgba(124, 92, 255, 0.1);
+    color: var(--color-purple);
+    padding: 6px 24px;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero .service-name {
+    font-size: 3rem;
+    color: var(--color-gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+}
+
+.hero .service-sub-name {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    letter-spacing: 0.2em;
+    margin-bottom: 30px;
+}
+
+.hero .badge-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.hero .main-headline {
+    font-size: 3.5rem;
+    line-height: 1.3;
+    margin-bottom: 40px;
+}
+
+.hero .tagline {
+    margin-bottom: 40px;
+}
+
+.hero .tagline-main {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.hero .tagline-sub {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.industry-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.industry-tags span {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+}
+
+/* Intro Card */
+.intro-card {
+    background-color: var(--color-card-grey);
+    padding: 60px 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--color-navy);
+}
+
+.intro-card p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+}
+
+.intro-card .highlight {
+    color: var(--color-navy);
+    font-weight: 900;
+}
+
+/* Grid Layouts */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* Cards */
+.card {
+    background-color: var(--color-bg-white);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-navy {
+    background-color: var(--color-navy);
+    color: white;
+}
+
+.card-grey {
+    background-color: var(--color-card-grey);
+    border: 1px solid #d1d5db;
+}
+
+/* Instructor Profiles */
+.profile-card {
+    position: relative;
+    padding: 24px;
+}
+
+.profile-card .badge-overlay {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background-color: #fff;
+    color: #333;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.profile-card.card-navy .badge-overlay {
+    background-color: #fff;
+    color: var(--color-navy);
+}
+
+.profile-image-box {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #ddd;
+}
+
+.profile-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.profile-role {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.profile-card.card-navy .profile-role {
+    color: var(--color-gold);
+}
+
+.profile-details {
+    list-style: none;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.achievement-box {
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-navy .achievement-box {
+    color: var(--color-gold);
+}
+
+.card-grey .achievement-box {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: none;
+}
+
+/* Music Team Cards */
+.mini-profile-card {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.mini-profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #999;
+    overflow: hidden;
+}
+
+.mini-profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.role-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.tag-green { background-color: #e6f7ef; color: #10b981; }
+.tag-blue { background-color: #eef2ff; color: #4f46e5; }
+.tag-pink { background-color: #fff1f2; color: #e11d48; }
+
+/* Team Label Styles */
+.team-label {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    background-color: #f0f2f5;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.catchphrase {
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.message-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    margin-top: 20px;
+}
+
+/* Outcomes & Details Grid */
+.benefit-card {
+    padding: 30px;
+}
+
+.benefit-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-navy);
+    margin-bottom: 10px;
+}
+
+.detail-item {
+    padding: 20px;
+}
+
+.detail-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-purple);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.detail-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-navy);
+}
+
+/* Related Service Promo - Night Vibe */
+#related-service {
+    background-color: var(--color-navy);
+    color: white;
+}
+
+#related-service .section-title-badge {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-gold);
+}
+
+.promo-box {
+    background: linear-gradient(145deg, #2a2845, var(--color-navy));
+    border: 1px solid rgba(244, 191, 31, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 60px 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    color: white;
+}
+
+.promo-heading {
+    color: var(--color-gold);
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(244, 191, 31, 0.3);
+}
+
+.promo-subheading {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #e2e8f0;
+}
+
+.promo-desc {
+    line-height: 2;
+    margin-bottom: 30px;
+    color: #cbd5e1;
+}
+
+.promo-footer {
+    font-weight: 700;
+    color: white;
+}
+
+/* Company Info */
+.company-table {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.company-row {
+    display: flex;
+    padding: 25px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.company-label {
+    width: 150px;
+    font-weight: 700;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.company-value {
+    flex: 1;
+    font-weight: 700;
+}
+
+.client-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.client-badge {
+    background-color: var(--color-card-grey);
+    padding: 4px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.cta-btn {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    width: 320px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cta-btn span {
+    display: block;
+}
+
+.cta-btn-label {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    margin-bottom: 10px;
+}
+
+.cta-btn-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.cta-disclaimer {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    .hero .main-headline {
+        font-size: 2.2rem;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cta-btn {
+        width: 100%;
+        max-width: 320px;
+    }
+}
