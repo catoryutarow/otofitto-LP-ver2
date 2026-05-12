@@ -6,34 +6,32 @@ export function Hero() {
       id="hero"
       className="bg-[var(--color-navy)] text-white py-[120px] md:py-[140px] [@media(max-width:768px)]:py-20 relative overflow-hidden"
     >
-      {/* Neo-brutalist typography backdrop: stacked OTOFITTO rows,
-          alternating between filled white and outlined (text-stroke). */}
-      <div
+      {/* Neo-brutalist backdrop: one huge OTOFITTO wordmark stretched
+          edge-to-edge via SVG preserveAspectRatio="none". The
+          non-scaling stroke keeps the outline uniform regardless of
+          how the SVG is squished/stretched to the hero's box. */}
+      <svg
         aria-hidden
-        className="pointer-events-none select-none absolute inset-0 overflow-hidden flex flex-col justify-around"
+        className="pointer-events-none select-none absolute inset-0 w-full h-full"
+        viewBox="0 0 1000 500"
+        preserveAspectRatio="none"
       >
-        {Array.from({ length: 9 }).map((_, i) => {
-          const filled = i % 2 === 0;
-          const offset = ((i * 37) % 18) - 9; // pseudo-random -9..+8 vw
-          return (
-            <div
-              key={i}
-              className="whitespace-nowrap font-black leading-[0.85]"
-              style={{
-                fontSize: "clamp(4rem, 11vw, 13rem)",
-                letterSpacing: "-0.06em",
-                transform: `translateX(${offset}vw)`,
-                color: filled ? "rgba(255,255,255,0.10)" : "transparent",
-                WebkitTextStroke: filled
-                  ? "0"
-                  : "2px rgba(255,255,255,0.18)",
-              }}
-            >
-              OTOFITTO&nbsp;OTOFITTO&nbsp;OTOFITTO&nbsp;OTOFITTO
-            </div>
-          );
-        })}
-      </div>
+        <text
+          x="0"
+          y="495"
+          fontSize="720"
+          fontWeight="900"
+          fontFamily="Inter, system-ui, sans-serif"
+          fill="none"
+          stroke="rgba(255,255,255,0.42)"
+          strokeWidth="1.6"
+          textLength="1000"
+          lengthAdjust="spacingAndGlyphs"
+          vectorEffect="non-scaling-stroke"
+        >
+          OTOFITTO
+        </text>
+      </svg>
 
       <div className="container-narrow text-center relative z-10">
         <p className="text-sm tracking-[0.2em] text-[var(--color-secondary)] font-bold mb-4">
