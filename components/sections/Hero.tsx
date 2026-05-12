@@ -10,9 +10,10 @@ export function Hero() {
           edge-to-edge via SVG preserveAspectRatio="none". The
           non-scaling stroke keeps the outline uniform regardless of
           how the SVG is squished/stretched to the hero's box. */}
+      {/* Desktop / tablet (≥768px): horizontal OTOFITTO stretched edge-to-edge */}
       <svg
         aria-hidden
-        className="pointer-events-none select-none absolute inset-0 w-full h-full"
+        className="hidden md:block pointer-events-none select-none absolute inset-0 w-full h-full"
         viewBox="0 0 1000 500"
         preserveAspectRatio="none"
       >
@@ -28,6 +29,32 @@ export function Hero() {
           textLength="1000"
           lengthAdjust="spacingAndGlyphs"
           vectorEffect="non-scaling-stroke"
+        >
+          OTOFITTO
+        </text>
+      </svg>
+
+      {/* Mobile (<768px): same wordmark rotated 90° so it runs vertically */}
+      <svg
+        aria-hidden
+        className="md:hidden pointer-events-none select-none absolute inset-0 w-full h-full"
+        viewBox="0 0 500 1000"
+        preserveAspectRatio="none"
+      >
+        <text
+          x="-250"
+          y="500"
+          dominantBaseline="central"
+          fontSize="640"
+          fontWeight="900"
+          fontFamily="Inter, system-ui, sans-serif"
+          fill="none"
+          stroke="rgba(255,255,255,0.42)"
+          strokeWidth="1.6"
+          textLength="1000"
+          lengthAdjust="spacingAndGlyphs"
+          vectorEffect="non-scaling-stroke"
+          transform="rotate(90 250 500)"
         >
           OTOFITTO
         </text>
