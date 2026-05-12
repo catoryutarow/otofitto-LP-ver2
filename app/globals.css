@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #1f1d36;
+  --color-gold: #f4bf1f;
+  --color-purple: #7c5cff;
+  --color-bg-light: #f8f9fa;
+  --color-card-grey: #f0f2f5;
+  --color-text-main: #333333;
+  --color-text-muted: #666666;
+
+  --radius-card: 16px;
+
+  --font-sans:
+    var(--font-inter), var(--font-noto-jp), system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+}
+
+@utility container-narrow {
+  width: 100%;
+  max-width: 1000px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@utility section-pad {
+  padding-block: 80px;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding-block: 60px;
+  }
+}
