@@ -4,28 +4,28 @@ import { movingMembers } from "@/lib/data";
 
 export function MovingTeam() {
   return (
-    <ScrollReveal as="section" id="moving-team" className="bg-white section-pad">
+    <ScrollReveal as="section" id="moving-team" className="bg-white section-pad relative">
       <div className="container-narrow">
         <SectionTitleBadge>
           一緒に動くチーム — あなたの隣に立つ2人
         </SectionTitleBadge>
 
-        <div className="grid grid-cols-2 gap-6 [@media(max-width:768px)]:gap-3">
+        <div className="grid grid-cols-2 gap-8 [@media(max-width:768px)]:grid-cols-1 mt-10">
           {movingMembers.map((m) => (
             <div
               key={m.name}
-              className="bg-[var(--color-card-grey)] border border-gray-300 rounded-2xl p-[30px] [@media(max-width:768px)]:px-4 [@media(max-width:768px)]:py-5"
+              className="bg-[var(--color-bg-light)] border-[3px] border-[var(--color-navy)] shadow-[8px_8px_0_0_rgba(31,41,55,1)] rounded-[var(--radius-card)] p-8 hover:-translate-y-1 hover:shadow-[10px_10px_0_0_rgba(31,41,55,1)] transition-all [@media(max-width:768px)]:p-6"
             >
-              <span className="inline-block rounded-md border border-gray-300 bg-[#f0f2f5] text-[#666] px-3 py-1 text-[0.8rem] font-black mb-4 [@media(max-width:768px)]:text-[0.7rem] [@media(max-width:768px)]:px-2 [@media(max-width:768px)]:mb-2.5">
+              <span className="inline-block rounded-lg border-2 border-[var(--color-navy)] bg-[var(--color-secondary)] text-[var(--color-navy)] shadow-[2px_2px_0_0_rgba(31,41,55,1)] px-4 py-1.5 text-[0.85rem] font-black mb-5">
                 {m.label}
               </span>
-              <h3 className="text-[1.6rem] text-[var(--color-navy)] font-bold mb-2.5 [@media(max-width:768px)]:text-[1.1rem]">
+              <h3 className="text-3xl text-[var(--color-navy)] font-black mb-3 [@media(max-width:768px)]:text-2xl">
                 {m.name}
               </h3>
-              <p className="text-[#666] text-base font-black mb-2.5 [@media(max-width:768px)]:text-[0.8rem]">
+              <p className="text-[var(--color-primary)] text-lg font-black mb-4">
                 {m.catchphrase}
               </p>
-              <p className="text-[0.9rem] opacity-90 [@media(max-width:768px)]:text-[0.75rem]">
+              <p className="text-[0.95rem] font-bold text-[var(--color-text-muted)] mb-6">
                 {m.details.map((d, i) => (
                   <span key={d}>
                     {d}
@@ -33,7 +33,8 @@ export function MovingTeam() {
                   </span>
                 ))}
               </p>
-              <div className="mt-5 rounded-xl border border-[#eee] bg-white p-4 text-[0.85rem] text-[#777] [@media(max-width:768px)]:p-2.5 [@media(max-width:768px)]:text-[0.75rem]">
+              <div className="mt-auto rounded-xl border-[3px] border-[var(--color-navy)] bg-white p-5 text-[0.9rem] font-bold text-[var(--color-navy)] relative">
+                <div className="absolute -top-3 -left-3 w-6 h-6 bg-[var(--color-bg-light)] border-[3px] border-[var(--color-navy)] rounded-full z-10 flex items-center justify-center"><span className="w-2 h-2 bg-[var(--color-primary)] rounded-full"></span></div>
                 {m.message}
               </div>
             </div>

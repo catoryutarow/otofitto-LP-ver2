@@ -1,18 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #1f1d36;
-  --color-gold: #f4bf1f;
-  --color-purple: #7c5cff;
-  --color-bg-light: #f8f9fa;
-  --color-card-grey: #f0f2f5;
-  --color-text-main: #333333;
-  --color-text-muted: #666666;
+  --color-primary: #1877f2;
+  --color-secondary: #f5b01b;
+  --color-navy: #1f2937;
+  --color-gold: #f5b01b;
+  --color-purple: #1877f2;
+  --color-bg-light: #f3f4f6;
+  --color-card-grey: #ffffff;
+  --color-text-main: #111827;
+  --color-text-muted: #4b5563;
+  --color-accent-green: #10b981;
+  --color-accent-red: #ef4444;
 
-  --radius-card: 16px;
+  --radius-card: 24px;
 
   --font-sans:
-    var(--font-inter), var(--font-noto-jp), system-ui, -apple-system, sans-serif;
+    var(--font-noto-jp), var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
@@ -25,6 +29,7 @@
     color: var(--color-text-main);
     line-height: 1.7;
     overflow-x: hidden;
+    font-weight: 500;
   }
 }
 
@@ -36,7 +41,7 @@
 }
 
 @utility section-pad {
-  padding-block: 80px;
+  padding-block: 100px;
 }
 
 @media (max-width: 768px) {

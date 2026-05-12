@@ -4,26 +4,26 @@ import { SectionTitleBadge } from "@/components/SectionTitleBadge";
 import { musicMembers } from "@/lib/data";
 
 const tagStyles: Record<"green" | "blue" | "pink", string> = {
-  green: "bg-[#e6f7ef] text-[#10b981]",
-  blue: "bg-[#eef2ff] text-[#4f46e5]",
-  pink: "bg-[#fff1f2] text-[#e11d48]",
+  green: "bg-[var(--color-accent-green)] text-white border-2 border-[var(--color-navy)] shadow-[2px_2px_0_0_rgba(31,41,55,1)]",
+  blue: "bg-[var(--color-primary)] text-white border-2 border-[var(--color-navy)] shadow-[2px_2px_0_0_rgba(31,41,55,1)]",
+  pink: "bg-[var(--color-accent-red)] text-white border-2 border-[var(--color-navy)] shadow-[2px_2px_0_0_rgba(31,41,55,1)]",
 };
 
 export function MusicSupport() {
   return (
-    <ScrollReveal as="section" id="music-support" className="bg-white section-pad">
+    <ScrollReveal as="section" id="music-support" className="bg-[var(--color-bg-light)] section-pad relative">
       <div className="container-narrow">
         <SectionTitleBadge>
           音楽サポートチーム — 株式会社モテコロ
         </SectionTitleBadge>
 
-        <div className="grid grid-cols-3 gap-6 [@media(max-width:900px)]:gap-4 [@media(max-width:768px)]:gap-2">
+        <div className="grid grid-cols-3 gap-6 [@media(max-width:900px)]:gap-4 [@media(max-width:768px)]:grid-cols-1 mt-10">
           {musicMembers.map((m) => (
             <div
               key={m.name}
-              className="bg-[var(--color-card-grey)] border border-gray-300 rounded-2xl text-center px-5 py-[30px] [@media(max-width:768px)]:px-1 [@media(max-width:768px)]:py-[15px]"
+              className="bg-white border-[3px] border-[var(--color-navy)] shadow-[6px_6px_0_0_rgba(31,41,55,1)] rounded-[var(--radius-card)] text-center px-5 py-[30px] hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(31,41,55,1)] transition-all [@media(max-width:768px)]:px-4 [@media(max-width:768px)]:py-6"
             >
-              <div className="relative w-[120px] h-[120px] mx-auto mb-4 rounded-full overflow-hidden bg-[#e0e0e0] [@media(max-width:768px)]:w-[60px] [@media(max-width:768px)]:h-[60px] [@media(max-width:768px)]:mb-2.5">
+              <div className="relative w-[120px] h-[120px] mx-auto mb-5 rounded-full overflow-hidden bg-[var(--color-secondary)] border-[3px] border-[var(--color-navy)] shadow-[4px_4px_0_0_rgba(31,41,55,1)] [@media(max-width:768px)]:w-[100px] [@media(max-width:768px)]:h-[100px] [@media(max-width:768px)]:mb-4">
                 <Image
                   src={m.image}
                   alt={m.name}
@@ -33,14 +33,14 @@ export function MusicSupport() {
                 />
               </div>
               <span
-                className={`inline-block rounded px-2.5 py-0.5 text-[0.7rem] font-black mb-2.5 [@media(max-width:768px)]:text-[0.6rem] [@media(max-width:768px)]:px-1.5 ${tagStyles[m.tagColor]}`}
+                className={`inline-block rounded-lg px-3 py-1 text-[0.75rem] font-black mb-4 [@media(max-width:768px)]:text-[0.7rem] ${tagStyles[m.tagColor]}`}
               >
                 {m.roleTag}
               </span>
-              <h3 className="text-2xl font-bold mb-1.5 [@media(max-width:768px)]:text-[0.9rem] [@media(max-width:768px)]:mb-1">
+              <h3 className="text-2xl font-black mb-2 text-[var(--color-navy)] [@media(max-width:768px)]:text-xl">
                 {m.name}
               </h3>
-              <p className="text-[0.85rem] opacity-90 [@media(max-width:768px)]:text-[0.65rem]">
+              <p className="text-[0.9rem] font-bold text-[var(--color-text-muted)] [@media(max-width:768px)]:text-[0.85rem]">
                 {m.details.map((d, i) => (
                   <span key={d}>
                     {d}
