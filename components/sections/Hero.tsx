@@ -18,12 +18,16 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="bg-white pt-20 pb-24 md:pt-24 md:pb-28 [@media(max-width:768px)]:pt-14 [@media(max-width:768px)]:pb-16 relative overflow-hidden"
+      className="bg-[var(--color-navy)] text-white pt-20 pb-24 md:pt-24 md:pb-28 [@media(max-width:768px)]:pt-14 [@media(max-width:768px)]:pb-16 relative overflow-hidden"
     >
       <div className="w-full max-w-[1400px] xl:max-w-[1500px] 2xl:max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-[5fr_6fr] gap-12 lg:gap-12 items-center">
-        {/* LEFT: text — narrower column, headlines stays compact */}
+        {/* LEFT: text on navy — same palette as the CTA footer band */}
         <div className="relative">
-          <h1 className="text-[2.2rem] lg:text-[2.2rem] xl:text-[2.6rem] leading-[1.3] mb-7 font-black text-[var(--color-navy)] [@media(max-width:768px)]:text-[1.75rem]">
+          <p className="text-xs font-black tracking-[0.25em] text-[var(--color-secondary)] mb-5">
+            OTOFITTO — Music × Fitness Wellness
+          </p>
+
+          <h1 className="text-[2.2rem] lg:text-[2.2rem] xl:text-[2.6rem] leading-[1.3] mb-7 font-black text-white [@media(max-width:768px)]:text-[1.75rem]">
             <span className="relative inline-block whitespace-nowrap">
               <span className="relative z-10">世界チャンピオン</span>
               <span
@@ -36,7 +40,7 @@ export function Hero() {
             あなたの会社に来る。
           </h1>
 
-          <p className="text-base md:text-lg mb-10 font-bold text-[var(--color-text-muted)] leading-[1.85] [@media(max-width:768px)]:text-[0.95rem]">
+          <p className="text-base md:text-lg mb-10 font-bold text-white/80 leading-[1.85] [@media(max-width:768px)]:text-[0.95rem]">
             音楽 × フィットネスの90分で、社員が体ごと一体になる、
             <br className="hidden md:block" />
             ライブ感あふれる体験型ウェルネス研修。
