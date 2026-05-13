@@ -29,8 +29,8 @@ export function MusicSupport() {
 
         <div className="grid grid-cols-3 gap-12 [@media(max-width:900px)]:gap-10 [@media(max-width:768px)]:grid-cols-1 [@media(max-width:768px)]:gap-12">
           {musicMembers.map((m) => (
-            <div key={m.name} className="relative">
-              <div className="relative w-[140px] h-[140px] mb-6 rounded-full overflow-hidden bg-[var(--color-bg-light)] [@media(max-width:768px)]:w-[120px] [@media(max-width:768px)]:h-[120px]">
+            <div key={m.name} className="relative [@media(max-width:768px)]:text-center">
+              <div className="relative w-[140px] h-[140px] mb-6 rounded-full overflow-hidden bg-[var(--color-bg-light)] [@media(max-width:768px)]:w-[120px] [@media(max-width:768px)]:h-[120px] [@media(max-width:768px)]:mx-auto">
                 <Image
                   src={m.image}
                   alt={m.name}
