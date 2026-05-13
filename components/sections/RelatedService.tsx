@@ -19,9 +19,11 @@ export function RelatedService() {
               SPECIAL OFFERS
             </p>
             <h3 className="text-[1.7rem] md:text-[2.1rem] font-black mb-6 leading-[1.4] text-[var(--color-navy)] [@media(max-width:768px)]:text-[1.4rem]">
-              「&quot;つきあい&quot;の飲み会」から、
+              <span className="whitespace-nowrap">「&quot;つきあい&quot;の飲み会」</span>
+              <span className="whitespace-nowrap">から、</span>
               <br />
-              「&quot;思い出&quot;の一夜」へ。
+              <span className="whitespace-nowrap">「&quot;思い出&quot;の一夜」</span>
+              <span className="whitespace-nowrap">へ。</span>
             </h3>
             <p className="text-base font-black text-[var(--color-navy)] mb-2">
               周年・忘年会・内定式・成果報告会 ——
