@@ -1,18 +1,32 @@
 type Props = {
   children: React.ReactNode;
   variant?: "default" | "onNavy";
+  align?: "left" | "center";
 };
 
-export function SectionTitleBadge({ children, variant = "default" }: Props) {
-  const styles =
-    variant === "onNavy"
-      ? "bg-[var(--color-navy)] text-white border-2 border-white shadow-[4px_4px_0_0_rgba(255,255,255,1)]"
-      : "bg-white text-[var(--color-navy)] border-2 border-[var(--color-navy)] shadow-[4px_4px_0_0_rgba(31,41,55,1)]";
+// Margin is intentionally NOT applied here — let the parent control spacing,
+// so this component can be composed inside flex title rows alongside decorations.
+export function SectionTitleBadge({
+  children,
+  variant = "default",
+  align = "center",
+}: Props) {
+  const onNavy = variant === "onNavy";
   return (
-    <div
-      className={`mx-auto mb-10 table rounded-xl px-6 py-2 text-[0.95rem] font-black tracking-wider ${styles}`}
-    >
-      {children}
+    <div className={align === "center" ? "text-center" : "text-left"}>
+      <span
+        className={`inline-flex items-center gap-3 text-[1.6rem] md:text-[2rem] font-black leading-tight tracking-wide [@media(max-width:768px)]:text-[1.3rem] ${
+          onNavy ? "text-white" : "text-[var(--color-navy)]"
+        }`}
+      >
+        <span
+          aria-hidden
+          className={`inline-block w-2 h-8 md:h-10 rounded-sm ${
+            onNavy ? "bg-[var(--color-secondary)]" : "bg-[var(--color-primary)]"
+          }`}
+        />
+        {children}
+      </span>
     </div>
   );
 }

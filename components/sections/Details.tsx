@@ -7,37 +7,39 @@ export function Details() {
     <ScrollReveal
       as="section"
       id="details"
-      className="bg-[var(--color-primary)] section-pad relative overflow-hidden"
+      className="bg-[var(--color-navy)] text-white section-pad relative overflow-hidden"
     >
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
-      <div className="container-narrow relative z-10">
-        <SectionTitleBadge variant="onNavy">イベント詳細</SectionTitleBadge>
-        <div className="grid grid-cols-2 gap-6 [@media(max-width:900px)]:grid-cols-1 mt-10">
+      <div className="w-full max-w-[1080px] xl:max-w-[1200px] 2xl:max-w-[1320px] mx-auto px-6 md:px-12 relative z-10">
+        <div className="mb-12 [@media(max-width:768px)]:mb-8">
+          <SectionTitleBadge variant="onNavy" align="left">
+            イベント詳細
+          </SectionTitleBadge>
+        </div>
+
+        <dl className="divide-y divide-white/15">
           {detailItems.map((d) => (
             <div
               key={d.label}
-              className="bg-white border-[3px] border-[var(--color-navy)] rounded-[var(--radius-card)] p-6 shadow-[8px_8px_0_0_rgba(31,41,55,1)] flex items-center"
+              className="grid grid-cols-[180px_1fr] gap-8 py-6 [@media(max-width:768px)]:grid-cols-1 [@media(max-width:768px)]:gap-2 [@media(max-width:768px)]:py-5"
             >
-              <div className="w-1/3">
-                <span className="inline-block bg-[var(--color-secondary)] text-[var(--color-navy)] font-black px-3 py-1 border-2 border-[var(--color-navy)] rounded-lg shadow-[2px_2px_0_0_rgba(31,41,55,1)] text-[0.85rem]">
-                  {d.label}
-                </span>
-              </div>
-              <div className="w-2/3 pl-4 border-l-2 border-dashed border-gray-300">
-                <span className="text-[1.1rem] font-black text-[var(--color-navy)] block">
-                  {d.value.map((v, i) => (
-                    <span key={v} className="block">
-                      {v}
-                    </span>
-                  ))}
-                  {d.note && (
-                    <span className="text-[0.85rem] text-[var(--color-text-muted)] font-bold mt-1 block">{d.note}</span>
-                  )}
-                </span>
-              </div>
+              <dt className="text-[var(--color-secondary)] font-black text-[0.95rem] tracking-wider">
+                {d.label}
+              </dt>
+              <dd className="font-bold text-white text-[1.05rem] leading-[1.9]">
+                {d.value.map((v) => (
+                  <span key={v} className="block">
+                    {v}
+                  </span>
+                ))}
+                {d.note && (
+                  <span className="text-[0.85rem] text-white/60 font-bold mt-2 block">
+                    {d.note}
+                  </span>
+                )}
+              </dd>
             </div>
           ))}
-        </div>
+        </dl>
       </div>
     </ScrollReveal>
   );

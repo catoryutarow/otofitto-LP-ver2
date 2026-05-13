@@ -1,46 +1,65 @@
+import Image from "next/image";
 import { cta } from "@/lib/data";
 
 export function CTA() {
   return (
     <section
       id="cta"
-      className="bg-[var(--color-navy)] text-white py-[100px] [@media(max-width:768px)]:py-15 relative overflow-hidden"
+      className="bg-[var(--color-navy)] text-white py-[100px] [@media(max-width:768px)]:py-16 relative overflow-hidden"
     >
-      <div className="absolute top-10 left-10 w-20 h-20 bg-[var(--color-primary)] rounded-lg rotate-12 opacity-20 blur-xl"></div>
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-[var(--color-secondary)] rounded-full -rotate-12 opacity-20 blur-xl"></div>
+      {/* Bottom-right floating character — anchored to section edge so it
+          stays in the gutter on any viewport. Vertically below content so
+          it can never overlap heading or contact info. */}
+      <div className="absolute right-4 bottom-0 w-[180px] h-[220px] hidden md:block xl:w-[220px] xl:h-[270px] 2xl:w-[260px] 2xl:h-[310px] pointer-events-none">
+        <Image src="/peoples/p2-grey-walk.png" alt="" fill className="object-contain object-bottom" />
+      </div>
 
-      <div className="container-narrow text-center relative z-10">
-        <h2 className="text-[2.5rem] mb-12 font-black tracking-widest text-[var(--color-secondary)] [@media(max-width:768px)]:text-[1.8rem] [@media(max-width:768px)]:mb-10">
-          まずは話を聞いてみる
-        </h2>
+      <div className="w-full max-w-[1080px] xl:max-w-[1200px] 2xl:max-w-[1320px] mx-auto px-6 md:px-12 relative z-10">
+        {/* Heading row — yellow char sits beside heading via flex, so it can't
+            collide with the title text no matter how the viewport flexes. */}
+        <div className="flex items-end justify-between gap-6 md:gap-12 mb-14 [@media(max-width:768px)]:mb-10">
+          <div>
+            <p className="text-xs font-black tracking-[0.25em] text-[var(--color-secondary)] mb-5">
+              CONTACT
+            </p>
+            <h2 className="text-[2.4rem] md:text-[3rem] font-black leading-tight text-white [@media(max-width:768px)]:text-[1.8rem]">
+              まずは話を
+              <br className="md:hidden" />
+              聞いてみる。
+            </h2>
+          </div>
+          <div className="hidden md:flex items-end shrink-0">
+            <div className="relative w-[110px] h-[140px] lg:w-[140px] lg:h-[170px] xl:w-[160px] xl:h-[190px]">
+              <Image src="/peoples/p1-yellow.png" alt="" fill className="object-contain object-bottom" />
+            </div>
+          </div>
+        </div>
 
-        <div className="flex gap-8 justify-center mb-10 [@media(max-width:900px)]:flex-col [@media(max-width:900px)]:items-center">
-          {[cta.phone, cta.email].map((c, i) => (
-            <a
-              key={c.value}
-              href={c.href}
-              className={`block w-[340px] max-w-full p-[30px] rounded-2xl border-[3px] border-white shadow-[6px_6px_0_0_rgba(255,255,255,0.2)] hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(255,255,255,0.3)] transition-all [@media(max-width:768px)]:px-5 [@media(max-width:768px)]:py-6 ${i === 0 ? "bg-[var(--color-primary)] text-white" : "bg-white text-[var(--color-navy)] border-transparent"}`}
-            >
-              <span className={`block text-[0.9rem] font-bold mb-2.5 ${i === 0 ? "text-white/80" : "text-[var(--color-primary)]"}`}>
-                {i === 0 ? "電話でお問い合わせ" : "メールでお問い合わせ"}
-              </span>
-              <span className={`block text-[1.8rem] font-black [@media(max-width:768px)]:text-[1.4rem]`}>
+        <div className="grid grid-cols-2 gap-10 [@media(max-width:768px)]:grid-cols-1 [@media(max-width:768px)]:gap-8">
+          {[
+            { ...cta.phone, label: "電話でお問い合わせ" },
+            { ...cta.email, label: "メールでお問い合わせ" },
+          ].map((c) => (
+            <a key={c.value} href={c.href} className="block group">
+              <p className="text-[0.85rem] font-bold text-white/60 mb-2 tracking-wider">
+                {c.label}
+              </p>
+              <p className="text-[1.6rem] md:text-[1.9rem] font-black text-white group-hover:text-[var(--color-secondary)] transition-colors break-all [@media(max-width:768px)]:text-[1.35rem]">
                 {c.value}
-              </span>
+              </p>
             </a>
           ))}
         </div>
 
-        <p className="opacity-70 mb-[30px] font-bold">{cta.url}</p>
-
-        <div className="inline-block bg-[var(--color-secondary)] text-[var(--color-navy)] border-2 border-[var(--color-navy)] px-6 py-2 rounded-xl text-[0.9rem] font-black shadow-[4px_4px_0_0_rgba(245,176,27,0.5)] mb-[50px]">
-          全国対応可
+        <div className="mt-14 flex flex-wrap items-center gap-4 [@media(max-width:768px)]:mt-10">
+          <span className="inline-flex items-center bg-[var(--color-secondary)] text-[var(--color-navy)] px-4 py-1.5 rounded-full text-[0.85rem] font-black">
+            全国対応可
+          </span>
+          <p className="text-white/60 font-bold text-[0.9rem]">{cta.url}</p>
         </div>
 
-        <p className="text-[0.85rem] opacity-60 leading-[1.8] font-bold">
-          本イベントはオトフィット実施チーム (株式会社モテコロ) と
-          <br />
-          株式会社スポルアップが連携してご提供するサービスです。
+        <p className="text-[0.85rem] text-white/50 leading-[1.9] font-bold mt-10 max-w-xl">
+          本イベントはオトフィット実施チーム (株式会社モテコロ) と株式会社スポルアップが連携してご提供するサービスです。
         </p>
       </div>
     </section>

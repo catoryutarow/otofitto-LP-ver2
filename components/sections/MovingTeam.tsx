@@ -1,31 +1,43 @@
+import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionTitleBadge } from "@/components/SectionTitleBadge";
 import { movingMembers } from "@/lib/data";
 
 export function MovingTeam() {
   return (
-    <ScrollReveal as="section" id="moving-team" className="bg-white section-pad relative">
-      <div className="container-narrow">
-        <SectionTitleBadge>
-          一緒に動くチーム — あなたの隣に立つ2人
-        </SectionTitleBadge>
+    <ScrollReveal
+      as="section"
+      id="moving-team"
+      className="bg-[var(--color-bg-light)] section-pad relative"
+    >
+      <div className="w-full max-w-[1180px] xl:max-w-[1280px] 2xl:max-w-[1400px] mx-auto px-6 md:px-12 relative">
+        <div className="flex items-end justify-between gap-6 md:gap-12 mb-14 [@media(max-width:768px)]:mb-10">
+          <SectionTitleBadge align="left">
+            一緒に動くチーム — あなたの隣に立つ2人
+          </SectionTitleBadge>
+          <div className="hidden md:flex items-end gap-2 shrink-0">
+            <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
+              <Image src="/peoples/p4-cap.png" alt="" fill className="object-contain object-bottom" />
+            </div>
+            <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
+              <Image src="/peoples/p1-yellow.png" alt="" fill className="object-contain object-bottom" />
+            </div>
+          </div>
+        </div>
 
-        <div className="grid grid-cols-2 gap-8 [@media(max-width:768px)]:grid-cols-1 mt-10">
+        <div className="grid grid-cols-2 gap-16 [@media(max-width:768px)]:grid-cols-1 [@media(max-width:768px)]:gap-12">
           {movingMembers.map((m) => (
-            <div
-              key={m.name}
-              className="bg-[var(--color-bg-light)] border-[3px] border-[var(--color-navy)] shadow-[8px_8px_0_0_rgba(31,41,55,1)] rounded-[var(--radius-card)] p-8 hover:-translate-y-1 hover:shadow-[10px_10px_0_0_rgba(31,41,55,1)] transition-all [@media(max-width:768px)]:p-6"
-            >
-              <span className="inline-block rounded-lg border-2 border-[var(--color-navy)] bg-[var(--color-secondary)] text-[var(--color-navy)] shadow-[2px_2px_0_0_rgba(31,41,55,1)] px-4 py-1.5 text-[0.85rem] font-black mb-5">
+            <div key={m.name} className="relative">
+              <p className="text-xs font-black mb-3 tracking-[0.15em] text-[var(--color-primary)]">
                 {m.label}
-              </span>
-              <h3 className="text-3xl text-[var(--color-navy)] font-black mb-3 [@media(max-width:768px)]:text-2xl">
+              </p>
+              <h3 className="text-[2rem] text-[var(--color-navy)] font-black mb-4 leading-tight [@media(max-width:768px)]:text-[1.6rem]">
                 {m.name}
               </h3>
-              <p className="text-[var(--color-primary)] text-lg font-black mb-4">
+              <p className="text-[var(--color-primary)] text-lg font-black mb-5 leading-snug">
                 {m.catchphrase}
               </p>
-              <p className="text-[0.95rem] font-bold text-[var(--color-text-muted)] mb-6">
+              <p className="text-[0.95rem] font-bold text-[var(--color-text-muted)] mb-7 leading-[1.9]">
                 {m.details.map((d, i) => (
                   <span key={d}>
                     {d}
@@ -33,10 +45,9 @@ export function MovingTeam() {
                   </span>
                 ))}
               </p>
-              <div className="mt-auto rounded-xl border-[3px] border-[var(--color-navy)] bg-white p-5 text-[0.9rem] font-bold text-[var(--color-navy)] relative">
-                <div className="absolute -top-3 -left-3 w-6 h-6 bg-[var(--color-bg-light)] border-[3px] border-[var(--color-navy)] rounded-full z-10 flex items-center justify-center"><span className="w-2 h-2 bg-[var(--color-primary)] rounded-full"></span></div>
+              <blockquote className="relative pl-6 text-[0.95rem] font-bold text-[var(--color-navy)] leading-[1.85] border-l-4 border-[var(--color-secondary)]">
                 {m.message}
-              </div>
+              </blockquote>
             </div>
           ))}
         </div>

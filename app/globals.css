@@ -22,6 +22,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Bump base from 16px to 18px so every rem-based size scales up ~12.5% */
+    font-size: 112.5%;
   }
 
   body {

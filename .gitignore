@@ -29,11 +29,11 @@ yarn-error.log*
 .vscode/
 .idea/
 
-# testing & screenshots (dev only)
+# testing & screenshots (dev only) — root-level only, doesn't affect /public
 .playwright-mcp/
-desktop-full.png
-mobile-full.png
-outcomes.png
+/*.png
+/*.jpeg
+/*.jpg
 
 # typescript
 *.tsbuildinfo
