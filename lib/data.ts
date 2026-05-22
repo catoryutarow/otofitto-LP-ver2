@@ -57,7 +57,7 @@ export type CompanyRow = {
 export const instructors: Instructor[] = [
   {
     name: "横関 裕二",
-    role: "ボディビル・フィジーク",
+    role: "ボディビル・クラシックフィジーク",
     badge: "世界大会 優勝",
     image: "/yokozeki.JPG",
     details: [
@@ -77,11 +77,11 @@ export const instructors: Instructor[] = [
     badge: "世界大会 入賞",
     image: "/sarasa.jpg",
     details: [
-      "筑波大学出身",
-      "360°姿勢美人アドバイザー",
+      "筑波大学 体育専門学群出身",
       "健康運動指導士",
+      "中高保健体育教諭免許",
     ],
-    achievement: ["ラート世界大会 2位", "シルホイール世界大会 3位"],
+    achievement: ["ラート世界選手権2015 団体2位", "シルホイール世界選手権2016 個人3位"],
     variant: "grey",
   },
   {
@@ -127,13 +127,12 @@ export const musicMembers: MusicMember[] = [
 // === 一緒に動くチーム (2名) ===================================================
 export const movingMembers: MovingMember[] = [
   {
-    label: "キャプテン山本",
+    label: "キャプテン山本 / 株式会社スポルアップ 代表",
     name: "山本 慎二郎",
     catchphrase: "明るく、楽しく、激しく。",
     details: [
-      "楽天・Amazon出身",
-      "9年間で230社以上のEC事業を支援",
-      "株式会社スポルアップ 代表",
+      "元高校球児・健康マニア社長",
+      "楽天・Amazon出身、230社超のEC事業を支援",
     ],
     message: "経営者目線で音頭をとり、社員と一緒に全力で動く",
   },
@@ -142,9 +141,8 @@ export const movingMembers: MovingMember[] = [
     name: "井上 美紀",
     catchphrase: "身体のことは、任せてください。",
     details: [
-      "早稲田大学スポーツ科学部出身",
-      "アスレチックトレーナー × 鍼灸師",
-      "女子日本代表トレーナー歴任",
+      "筑波大学 体育専門学群出身",
+      "フィットネストレーナー × 鍼灸師",
     ],
     message: "参加者の身体に寄り添い、痛み・疲労をその場でケア",
   },
