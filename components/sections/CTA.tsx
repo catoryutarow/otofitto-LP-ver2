@@ -7,11 +7,29 @@ export function CTA() {
       id="cta"
       className="bg-[var(--color-navy)] text-white py-[100px] [@media(max-width:768px)]:py-16 relative overflow-hidden"
     >
+      {/* Decorative music notes — original ink color, no filter. */}
+      <Image
+        src="/peoples/note-double.png"
+        alt=""
+        aria-hidden
+        width={120}
+        height={120}
+        className="hidden md:block absolute top-12 left-[8%] w-16 lg:w-20 rotate-[-14deg] pointer-events-none select-none"
+      />
+      <Image
+        src="/peoples/note-single.png"
+        alt=""
+        aria-hidden
+        width={80}
+        height={80}
+        className="hidden md:block absolute top-[58%] left-[38%] w-10 lg:w-12 rotate-[20deg] pointer-events-none select-none"
+      />
+
       {/* Bottom-right floating character — anchored to section edge so it
           stays in the gutter on any viewport. Vertically below content so
           it can never overlap heading or contact info. */}
       <div className="absolute right-4 bottom-0 w-[180px] h-[220px] hidden md:block xl:w-[220px] xl:h-[270px] 2xl:w-[260px] 2xl:h-[310px] pointer-events-none">
-        <Image src="/peoples/p2-grey-walk.png" alt="" fill className="object-contain object-bottom" />
+        <Image src="/peoples/c2-grey-walk.png" alt="" fill className="object-contain object-bottom" />
       </div>
 
       <div className="w-full max-w-[1080px] xl:max-w-[1200px] 2xl:max-w-[1320px] mx-auto px-6 md:px-12 relative z-10">
@@ -30,7 +48,7 @@ export function CTA() {
           </div>
           <div className="hidden md:flex items-end shrink-0">
             <div className="relative w-[110px] h-[140px] lg:w-[140px] lg:h-[170px] xl:w-[160px] xl:h-[190px]">
-              <Image src="/peoples/p1-yellow.png" alt="" fill className="object-contain object-bottom" />
+              <Image src="/peoples/c1-champion.png" alt="" fill className="object-contain object-bottom" />
             </div>
           </div>
         </div>

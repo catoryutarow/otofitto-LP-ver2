@@ -7,19 +7,29 @@ export function Intro() {
     <ScrollReveal
       as="section"
       id="intro"
-      className="bg-[var(--color-bg-light)] section-pad relative"
+      className="bg-[var(--color-bg-light)] section-pad relative overflow-hidden"
     >
-      <div className="w-full max-w-[1080px] xl:max-w-[1200px] 2xl:max-w-[1320px] mx-auto px-6 md:px-12 relative">
+      {/* Single decorative note — quiet rhythm cue tying intro to music theme. */}
+      <Image
+        src="/peoples/note-single.png"
+        alt=""
+        aria-hidden
+        width={80}
+        height={80}
+        className="hidden md:block absolute top-20 right-[4%] w-10 lg:w-14 rotate-[18deg] pointer-events-none select-none"
+      />
+
+      <div className="w-full max-w-[1080px] xl:max-w-[1200px] 2xl:max-w-[1320px] mx-auto px-6 md:px-12 relative z-10">
         {/* Title row: heading on left, decorative chars on right of same row.
             They can never overlap the heading because they're flex siblings. */}
         <div className="flex items-end justify-between gap-6 md:gap-12 mb-12 [@media(max-width:768px)]:mb-8">
           <SectionTitleBadge align="left">オトフィットとは</SectionTitleBadge>
           <div className="hidden md:flex items-end gap-2 shrink-0">
             <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
-              <Image src="/peoples/p2-grey-walk.png" alt="" fill className="object-contain object-bottom" />
+              <Image src="/peoples/c2-grey-walk.png" alt="" fill className="object-contain object-bottom" />
             </div>
             <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
-              <Image src="/peoples/p6-yellow-hp.png" alt="" fill className="object-contain object-bottom" />
+              <Image src="/peoples/c6-dance.png" alt="" fill className="object-contain object-bottom" />
             </div>
           </div>
         </div>

@@ -17,10 +17,10 @@ export function MovingTeam() {
           </SectionTitleBadge>
           <div className="hidden md:flex items-end gap-2 shrink-0">
             <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
-              <Image src="/peoples/p4-cap.png" alt="" fill className="object-contain object-bottom" />
+              <Image src="/peoples/c4-cap-run.png" alt="" fill className="object-contain object-bottom" />
             </div>
             <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
-              <Image src="/peoples/p1-yellow.png" alt="" fill className="object-contain object-bottom" />
+              <Image src="/peoples/c5-blue-smile.png" alt="" fill className="object-contain object-bottom" />
             </div>
           </div>
         </div>

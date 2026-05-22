@@ -11,18 +11,45 @@ const tagColor: Record<"green" | "blue" | "pink", string> = {
 
 export function MusicSupport() {
   return (
-    <ScrollReveal as="section" id="music-support" className="bg-white section-pad relative">
-      <div className="w-full max-w-[1180px] xl:max-w-[1280px] 2xl:max-w-[1400px] mx-auto px-6 md:px-12 relative">
+    <ScrollReveal as="section" id="music-support" className="bg-white section-pad relative overflow-hidden">
+      {/* Decorative music notes scattered as background — pink-tinted on white,
+          low opacity so they sit behind content as ambient rhythm. */}
+      <Image
+        src="/peoples/note-double.png"
+        alt=""
+        aria-hidden
+        width={120}
+        height={120}
+        className="hidden md:block absolute top-24 right-[8%] w-16 lg:w-20 rotate-[12deg] pointer-events-none select-none"
+      />
+      <Image
+        src="/peoples/note-single.png"
+        alt=""
+        aria-hidden
+        width={80}
+        height={80}
+        className="hidden md:block absolute bottom-32 left-[6%] w-10 lg:w-12 -rotate-[8deg] pointer-events-none select-none"
+      />
+      <Image
+        src="/peoples/note-single.png"
+        alt=""
+        aria-hidden
+        width={80}
+        height={80}
+        className="hidden lg:block absolute top-[55%] right-[2%] w-8 rotate-[24deg] pointer-events-none select-none"
+      />
+
+      <div className="w-full max-w-[1180px] xl:max-w-[1280px] 2xl:max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="flex items-end justify-between gap-6 md:gap-12 mb-14 [@media(max-width:768px)]:mb-10">
           <SectionTitleBadge align="left">
             音楽サポートチーム — 株式会社モテコロ
           </SectionTitleBadge>
           <div className="hidden md:flex items-end gap-2 shrink-0">
             <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
-              <Image src="/peoples/p3-green.png" alt="" fill className="object-contain object-bottom" />
+              <Image src="/peoples/c3-green-girl.png" alt="" fill className="object-contain object-bottom" />
             </div>
             <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
-              <Image src="/peoples/p5-blue.png" alt="" fill className="object-contain object-bottom" />
+              <Image src="/peoples/c5-blue-smile.png" alt="" fill className="object-contain object-bottom" />
             </div>
           </div>
         </div>
