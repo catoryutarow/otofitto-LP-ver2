@@ -1,5 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_JP } from "next/font/google";
+import {
+  Inter,
+  Noto_Sans_JP,
+  M_PLUS_1,
+  Klee_One,
+  Yomogi,
+  Yusei_Magic,
+  Reggae_One,
+  Rampart_One,
+  Shippori_Mincho_B1,
+  Hachi_Maru_Pop,
+  DotGothic16,
+  RocknRoll_One,
+  Kaisei_Decol,
+} from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,6 +29,26 @@ const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-jp",
   display: "swap",
 });
+
+// Heading display font — strong, sporty, modern
+const mplus1 = M_PLUS_1({
+  subsets: ["latin"],
+  weight: ["700", "900"],
+  variable: "--font-mplus",
+  display: "swap",
+});
+
+// Decorative fonts for catchcopy "あしらい" comparison page
+const klee = Klee_One({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-klee", display: "swap" });
+const yomogi = Yomogi({ subsets: ["latin"], weight: ["400"], variable: "--font-yomogi", display: "swap" });
+const yusei = Yusei_Magic({ subsets: ["latin"], weight: ["400"], variable: "--font-yusei", display: "swap" });
+const reggae = Reggae_One({ subsets: ["latin"], weight: ["400"], variable: "--font-reggae", display: "swap" });
+const rampart = Rampart_One({ subsets: ["latin"], weight: ["400"], variable: "--font-rampart", display: "swap" });
+const shippori = Shippori_Mincho_B1({ subsets: ["latin"], weight: ["700", "800"], variable: "--font-shippori", display: "swap" });
+const hachimaru = Hachi_Maru_Pop({ subsets: ["latin"], weight: ["400"], variable: "--font-hachimaru", display: "swap" });
+const dotgothic = DotGothic16({ subsets: ["latin"], weight: ["400"], variable: "--font-dot", display: "swap" });
+const rocknroll = RocknRoll_One({ subsets: ["latin"], weight: ["400"], variable: "--font-rocknroll", display: "swap" });
+const kaiseidecol = Kaisei_Decol({ subsets: ["latin"], weight: ["700"], variable: "--font-kaisei-decol", display: "swap" });
 
 export const metadata: Metadata = {
   title: "オトフィット (OTOFITTO) | 音楽 × フィットネス ウェルネス体験",
@@ -42,7 +76,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja" className={`${inter.variable} ${notoSansJP.variable}`}>
+    <html
+      lang="ja"
+      className={`${inter.variable} ${notoSansJP.variable} ${mplus1.variable} ${klee.variable} ${yomogi.variable} ${yusei.variable} ${reggae.variable} ${rampart.variable} ${shippori.variable} ${hachimaru.variable} ${dotgothic.variable} ${rocknroll.variable} ${kaiseidecol.variable}`}
+    >
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

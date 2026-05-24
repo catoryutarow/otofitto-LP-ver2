@@ -9,6 +9,16 @@ const tagColor: Record<"green" | "blue" | "pink", string> = {
   pink: "text-[var(--color-accent-red)]",
 };
 
+// Same parallelogram shape as Instructors so the LP reads with a single
+// "framed portrait" identity across both performer and trainer sections.
+const CLIP = "polygon(7% 0, 100% 0, 93% 100%, 0 100%)";
+
+const accentBg: Record<"green" | "blue" | "pink", string> = {
+  green: "var(--color-accent-green)",
+  blue: "var(--color-primary)",
+  pink: "var(--color-accent-red)",
+};
+
 export function MusicSupport() {
   return (
     <ScrollReveal as="section" id="music-support" className="bg-white section-pad relative overflow-hidden">
@@ -40,7 +50,7 @@ export function MusicSupport() {
       />
 
       <div className="w-full max-w-[1180px] xl:max-w-[1280px] 2xl:max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex items-end justify-between gap-6 md:gap-12 mb-14 [@media(max-width:768px)]:mb-10">
+        <div className="flex items-end justify-between gap-6 md:gap-12 mb-14 [@media(max-width:1000px)]:mb-10">
           <SectionTitleBadge align="left">
             音楽サポートチーム — 株式会社モテコロ
           </SectionTitleBadge>
@@ -54,23 +64,32 @@ export function MusicSupport() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-12 [@media(max-width:900px)]:gap-10 [@media(max-width:768px)]:grid-cols-1 [@media(max-width:768px)]:gap-12">
+        <div className="grid grid-cols-3 gap-12 [@media(max-width:900px)]:gap-10 [@media(max-width:1000px)]:grid-cols-1 [@media(max-width:1000px)]:gap-12">
           {musicMembers.map((m) => (
-            <div key={m.name} className="relative [@media(max-width:768px)]:text-center">
-              <div className="relative w-[140px] h-[140px] mb-6 rounded-full overflow-hidden bg-[var(--color-bg-light)] [@media(max-width:768px)]:w-[120px] [@media(max-width:768px)]:h-[120px] [@media(max-width:768px)]:mx-auto">
-                <Image
-                  src={m.image}
-                  alt={m.name}
-                  fill
-                  sizes="140px"
-                  className="object-cover object-top"
+            <div key={m.name} className="relative [@media(max-width:1000px)]:text-center">
+              {/* Placeholder portrait — Instructors-style parallelogram with
+                  colored backdrop offset. Gray fill until real photo lands. */}
+              <div className="relative isolate w-full max-w-[280px] mb-6 [@media(max-width:1000px)]:mx-auto">
+                <div
+                  aria-hidden
+                  className="absolute inset-0 z-0"
+                  style={{
+                    backgroundColor: accentBg[m.tagColor],
+                    clipPath: CLIP,
+                    transform: "translate(12px, 12px)",
+                  }}
+                />
+                <div
+                  aria-hidden
+                  className="relative z-10 w-full aspect-[4/5] bg-[#e5e7eb]"
+                  style={{ clipPath: CLIP }}
                 />
               </div>
 
               <p className={`text-xs font-black mb-2 tracking-[0.15em] ${tagColor[m.tagColor]}`}>
                 {m.roleTag}
               </p>
-              <h3 className="text-2xl font-black mb-3 text-[var(--color-navy)] [@media(max-width:768px)]:text-xl">
+              <h3 className="text-2xl font-black mb-3 text-[var(--color-navy)] [@media(max-width:1000px)]:text-xl">
                 {m.name}
               </h3>
               <p className="text-[0.92rem] font-bold text-[var(--color-text-muted)] leading-[1.9]">

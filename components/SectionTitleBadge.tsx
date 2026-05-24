@@ -15,7 +15,7 @@ export function SectionTitleBadge({
   return (
     <div className={align === "center" ? "text-center" : "text-left"}>
       <span
-        className={`inline-flex items-center gap-3 text-[1.6rem] md:text-[2rem] font-black leading-tight tracking-wide [@media(max-width:768px)]:text-[1.3rem] ${
+        className={`inline-flex items-center gap-3 font-heading text-[1.6rem] md:text-[2rem] font-black leading-tight tracking-wide [@media(max-width:1000px)]:text-[1.3rem] ${
           onNavy ? "text-white" : "text-[var(--color-navy)]"
         }`}
       >

@@ -92,7 +92,7 @@ export function Instructors() {
       className="bg-[var(--color-secondary)] section-pad relative overflow-hidden"
     >
       <div className="w-full max-w-[1180px] xl:max-w-[1280px] 2xl:max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-        <div className="mb-14 [@media(max-width:768px)]:mb-10">
+        <div className="mb-14 [@media(max-width:1000px)]:mb-10">
           <SectionTitleBadge align="left">
             世界タイトルホルダー 3名が直接指導
           </SectionTitleBadge>

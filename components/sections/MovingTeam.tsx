@@ -3,6 +3,12 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionTitleBadge } from "@/components/SectionTitleBadge";
 import { movingMembers } from "@/lib/data";
 
+// Same parallelogram shape as Instructors/MusicSupport for portrait coherence
+const CLIP = "polygon(7% 0, 100% 0, 93% 100%, 0 100%)";
+
+// Two distinct accent colors so 山本/井上 read as a complementary duo
+const accents = ["var(--color-primary)", "var(--color-accent-red)"];
+
 export function MovingTeam() {
   return (
     <ScrollReveal
@@ -11,7 +17,7 @@ export function MovingTeam() {
       className="bg-[var(--color-bg-light)] section-pad relative"
     >
       <div className="w-full max-w-[1180px] xl:max-w-[1280px] 2xl:max-w-[1400px] mx-auto px-6 md:px-12 relative">
-        <div className="flex items-end justify-between gap-6 md:gap-12 mb-14 [@media(max-width:768px)]:mb-10">
+        <div className="flex items-end justify-between gap-6 md:gap-12 mb-14 [@media(max-width:1000px)]:mb-10">
           <SectionTitleBadge align="left">
             一緒に動くチーム — あなたの隣に立つ2人
           </SectionTitleBadge>
@@ -25,13 +31,31 @@ export function MovingTeam() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-16 [@media(max-width:768px)]:grid-cols-1 [@media(max-width:768px)]:gap-12">
-          {movingMembers.map((m) => (
+        <div className="grid grid-cols-2 gap-16 [@media(max-width:1000px)]:grid-cols-1 [@media(max-width:1000px)]:gap-12">
+          {movingMembers.map((m, i) => (
             <div key={m.name} className="relative">
+              {/* Placeholder portrait — Instructors-style parallelogram with
+                  colored backdrop. Gray fill until real photo lands. */}
+              <div className="relative isolate w-full max-w-[280px] mb-7">
+                <div
+                  aria-hidden
+                  className="absolute inset-0 z-0"
+                  style={{
+                    backgroundColor: accents[i],
+                    clipPath: CLIP,
+                    transform: "translate(14px, 14px)",
+                  }}
+                />
+                <div
+                  aria-hidden
+                  className="relative z-10 w-full aspect-[4/5] bg-[#e5e7eb]"
+                  style={{ clipPath: CLIP }}
+                />
+              </div>
               <p className="text-xs font-black mb-3 tracking-[0.15em] text-[var(--color-primary)]">
                 {m.label}
               </p>
-              <h3 className="text-[2rem] text-[var(--color-navy)] font-black mb-4 leading-tight [@media(max-width:768px)]:text-[1.6rem]">
+              <h3 className="text-[2rem] text-[var(--color-navy)] font-black mb-4 leading-tight [@media(max-width:1000px)]:text-[1.6rem]">
                 {m.name}
               </h3>
               <p className="text-[var(--color-primary)] text-lg font-black mb-5 leading-snug">

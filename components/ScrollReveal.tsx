@@ -3,9 +3,12 @@
 import { motion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+// Opacity-only fade keeps motion.div from acquiring a transform, which would
+// otherwise turn it into a containing block for absolutely-positioned children
+// (music notes, decorative chars) — breaking their section-relative anchors.
+const fadeIn: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 type Props = {
@@ -16,6 +19,10 @@ type Props = {
   id?: string;
 };
 
+// When `as="section"`, the section element (and its bg color) is rendered
+// statically, and only the inner content fades in. This avoids the moment
+// where the section's bg color is still transparent and the SectionCurve
+// dividers above/below show a visible seam against the page body bg.
 export function ScrollReveal({
   children,
   className,
@@ -23,18 +30,33 @@ export function ScrollReveal({
   as = "div",
   id,
 }: Props) {
-  const MotionTag = as === "section" ? motion.section : motion.div;
+  if (as === "section") {
+    return (
+      <section id={id} className={className}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+          variants={fadeIn}
+          transition={{ delay }}
+        >
+          {children}
+        </motion.div>
+      </section>
+    );
+  }
+
   return (
-    <MotionTag
+    <motion.div
       id={id}
       className={className}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "0px 0px -50px 0px" }}
-      variants={fadeUp}
+      variants={fadeIn}
       transition={{ delay }}
     >
       {children}
-    </MotionTag>
+    </motion.div>
   );
 }

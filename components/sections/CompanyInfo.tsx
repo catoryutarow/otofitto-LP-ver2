@@ -4,9 +4,9 @@ import { companyInfo } from "@/lib/data";
 
 export function CompanyInfo() {
   return (
-    <ScrollReveal as="section" id="company" className="bg-white pt-24 pb-16 [@media(max-width:768px)]:pt-16 [@media(max-width:768px)]:pb-10">
+    <ScrollReveal as="section" id="company" className="bg-white pt-24 pb-16 [@media(max-width:1000px)]:pt-16 [@media(max-width:1000px)]:pb-10">
       <div className="w-full max-w-[1080px] xl:max-w-[1200px] 2xl:max-w-[1320px] mx-auto px-6 md:px-12">
-        <div className="mb-12 [@media(max-width:768px)]:mb-8">
+        <div className="mb-12 [@media(max-width:1000px)]:mb-8">
           <SectionTitleBadge align="left">運営・お問い合わせ窓口</SectionTitleBadge>
         </div>
 
@@ -14,7 +14,7 @@ export function CompanyInfo() {
           {companyInfo.map((row) => (
             <div
               key={row.label}
-              className="grid grid-cols-[180px_1fr] gap-8 py-5 [@media(max-width:768px)]:grid-cols-1 [@media(max-width:768px)]:gap-2 [@media(max-width:768px)]:py-4"
+              className="grid grid-cols-[180px_1fr] gap-8 py-5 [@media(max-width:1000px)]:grid-cols-1 [@media(max-width:1000px)]:gap-2 [@media(max-width:1000px)]:py-4"
             >
               <dt className="font-black text-[var(--color-primary)] text-[0.95rem] tracking-wider">
                 {row.label}

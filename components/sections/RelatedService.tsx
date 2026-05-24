@@ -37,7 +37,7 @@ export function RelatedService() {
       />
 
       <div className="w-full max-w-[1080px] xl:max-w-[1200px] 2xl:max-w-[1320px] mx-auto px-6 md:px-12 relative z-10">
-        <div className="mb-12 [@media(max-width:768px)]:mb-8">
+        <div className="mb-12 [@media(max-width:1000px)]:mb-8">
           <SectionTitleBadge align="left">関連サービス「生演奏カラオケ」</SectionTitleBadge>
         </div>
 
@@ -46,7 +46,7 @@ export function RelatedService() {
             <p className="text-xs font-black tracking-[0.2em] text-[var(--color-navy)] mb-4">
               SPECIAL OFFERS
             </p>
-            <h3 className="text-[1.7rem] md:text-[2.1rem] font-black mb-6 leading-[1.4] text-[var(--color-navy)] [@media(max-width:768px)]:text-[1.4rem]">
+            <h3 className="text-[1.7rem] md:text-[2.1rem] font-black mb-6 leading-[1.4] text-[var(--color-navy)] [@media(max-width:1000px)]:text-[1.4rem]">
               <span className="whitespace-nowrap">「&quot;つきあい&quot;の飲み会」</span>
               <span className="whitespace-nowrap">から、</span>
               <br />

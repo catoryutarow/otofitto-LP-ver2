@@ -104,7 +104,7 @@ export const musicMembers: MusicMember[] = [
   {
     name: "加藤 龍太郎",
     image: "/kato.png",
-    roleTag: "音楽理論無双",
+    roleTag: "ピアノ無双",
     tagColor: "green",
     details: ["東京藝術大学在学", "作曲200曲超・音楽講師"],
   },
