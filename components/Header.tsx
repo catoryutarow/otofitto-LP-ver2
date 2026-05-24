@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { cta } from "@/lib/data";
 
 const navItems = [
   { label: "オトフィットとは", href: "#intro" },
@@ -45,7 +46,9 @@ export function Header() {
             </a>
           ))}
           <a
-            href="#cta"
+            href={cta.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[var(--color-navy)] text-white font-black text-sm px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
           >
             無料体験
@@ -96,7 +99,9 @@ export function Header() {
             </a>
           ))}
           <a
-            href="#cta"
+            href={cta.url}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="mt-5 inline-flex justify-center items-center bg-[var(--color-navy)] text-white font-black text-base py-3.5 rounded-xl"
           >

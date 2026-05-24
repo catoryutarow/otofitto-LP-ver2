@@ -9,6 +9,12 @@ const CLIP = "polygon(7% 0, 100% 0, 93% 100%, 0 100%)";
 // Two distinct accent colors so 山本/井上 read as a complementary duo
 const accents = ["var(--color-primary)", "var(--color-accent-red)"];
 
+// Real photos for 山本 (yamamoto.jpg) and 井上 (inoue.png) — keyed by name.
+const photoByName: Record<string, { src: string; objectPosition: string }> = {
+  "山本 慎二郎": { src: "/yamamoto.jpg", objectPosition: "50% 30%" },
+  "井上 美紀":   { src: "/inoue.png",    objectPosition: "50% 30%" },
+};
+
 export function MovingTeam() {
   return (
     <ScrollReveal
@@ -34,8 +40,8 @@ export function MovingTeam() {
         <div className="grid grid-cols-2 gap-16 [@media(max-width:1000px)]:grid-cols-1 [@media(max-width:1000px)]:gap-12">
           {movingMembers.map((m, i) => (
             <div key={m.name} className="relative">
-              {/* Placeholder portrait — Instructors-style parallelogram with
-                  colored backdrop. Gray fill until real photo lands. */}
+              {/* Portrait — Instructors-style parallelogram with colored
+                  backdrop offset behind the real photo. */}
               <div className="relative isolate w-full max-w-[280px] mb-7">
                 <div
                   aria-hidden
@@ -47,10 +53,20 @@ export function MovingTeam() {
                   }}
                 />
                 <div
-                  aria-hidden
-                  className="relative z-10 w-full aspect-[4/5] bg-[#e5e7eb]"
+                  className="relative z-10 w-full aspect-[4/5] bg-[#e5e7eb] overflow-hidden"
                   style={{ clipPath: CLIP }}
-                />
+                >
+                  {photoByName[m.name] && (
+                    <Image
+                      src={photoByName[m.name].src}
+                      alt={m.name}
+                      fill
+                      sizes="(max-width: 1000px) 90vw, 280px"
+                      style={{ objectPosition: photoByName[m.name].objectPosition }}
+                      className="object-cover"
+                    />
+                  )}
+                </div>
               </div>
               <p className="text-xs font-black mb-3 tracking-[0.15em] text-[var(--color-primary)]">
                 {m.label}

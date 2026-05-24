@@ -67,8 +67,8 @@ export function MusicSupport() {
         <div className="grid grid-cols-3 gap-12 [@media(max-width:900px)]:gap-10 [@media(max-width:1000px)]:grid-cols-1 [@media(max-width:1000px)]:gap-12">
           {musicMembers.map((m) => (
             <div key={m.name} className="relative [@media(max-width:1000px)]:text-center">
-              {/* Placeholder portrait — Instructors-style parallelogram with
-                  colored backdrop offset. Gray fill until real photo lands. */}
+              {/* Portrait — Instructors-style parallelogram with colored
+                  backdrop offset behind the photo. */}
               <div className="relative isolate w-full max-w-[280px] mb-6 [@media(max-width:1000px)]:mx-auto">
                 <div
                   aria-hidden
@@ -80,10 +80,17 @@ export function MusicSupport() {
                   }}
                 />
                 <div
-                  aria-hidden
-                  className="relative z-10 w-full aspect-[4/5] bg-[#e5e7eb]"
+                  className="relative z-10 w-full aspect-[4/5] bg-white overflow-hidden"
                   style={{ clipPath: CLIP }}
-                />
+                >
+                  <Image
+                    src={m.image}
+                    alt={m.name}
+                    fill
+                    sizes="(max-width: 1000px) 90vw, 280px"
+                    className="object-cover object-top"
+                  />
+                </div>
               </div>
 
               <p className={`text-xs font-black mb-2 tracking-[0.15em] ${tagColor[m.tagColor]}`}>

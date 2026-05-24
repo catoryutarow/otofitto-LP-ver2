@@ -36,16 +36,17 @@ export function Intro() {
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-10 md:gap-16 items-start">
           <p className="text-[var(--color-primary)] font-black text-[1.4rem] md:text-[1.7rem] leading-[1.55] [@media(max-width:1000px)]:text-[1.2rem]">
-            音楽 × 体操 × 世界レベルの専門家
-            <br />
-            による、社員が&quot;自然に動く&quot;参加型ウェルネス体験。
+            音楽 × 体操 <br /> 世界レベルの専門家による、<br />参加型ウェルネス体験。
           </p>
 
           <div className="space-y-5">
             <p className="text-[var(--color-text-muted)] text-[1.05rem] font-bold leading-[2] [@media(max-width:1000px)]:text-base">
               特別な設備・準備物不要。出張型で全国対応。
               <br />
-              笑って動いて、現場が変わる90分。
+              脳科学的にも効果バツグンな90分。
+              <span className="block mt-1 text-[0.7rem] md:text-[0.75rem] font-medium text-[var(--color-text-muted)]/80 leading-[1.55]">
+                ※運動と音楽の効果に関する複数の研究知見を参考にプログラムを設計しています。
+              </span>
             </p>
             <p className="inline-flex items-center gap-2 text-sm font-black text-[var(--color-navy)] bg-[var(--color-secondary)] px-4 py-2 rounded-full">
               現場までフル機材持ち込み・ファシリ運営まで一括

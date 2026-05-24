@@ -47,10 +47,9 @@ export function RelatedService() {
               SPECIAL OFFERS
             </p>
             <h3 className="text-[1.7rem] md:text-[2.1rem] font-black mb-6 leading-[1.4] text-[var(--color-navy)] [@media(max-width:1000px)]:text-[1.4rem]">
-              <span className="whitespace-nowrap">「&quot;つきあい&quot;の飲み会」</span>
-              <span className="whitespace-nowrap">から、</span>
+              <span className="whitespace-nowrap">「単なるつきあい」から、</span>
               <br />
-              <span className="whitespace-nowrap">「&quot;思い出&quot;の一夜」</span>
+              <span className="whitespace-nowrap">「思い出のライブ」</span>
               <span className="whitespace-nowrap">へ。</span>
             </h3>
             <p className="text-base font-black text-[var(--color-navy)] mb-2">
@@ -74,7 +73,7 @@ export function RelatedService() {
               オトフィットの音楽サポートチームが、特別な一夜まで一貫伴走します。
             </p>
             <p className="text-[0.9rem] font-bold text-[var(--color-navy)] leading-[1.85]">
-              生演奏カラオケの詳細資料をご用意しています。お問い合わせ時にお気軽にお申し付けください。
+              詳細資料をご用意しています。お問い合わせ時にお気軽にお申し付けください。
             </p>
           </div>
         </div>

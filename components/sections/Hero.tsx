@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cta } from "@/lib/data";
 
 // Hand-drawn speech bubble — uses /bubble.png as a stretched background so the
 // text drives the size. The png is 512×160 (≈16:5) with a tail at the
@@ -150,13 +151,15 @@ export function Hero() {
         </h1>
 
         <p className="text-base md:text-lg mb-9 font-bold text-[var(--color-navy)] leading-[1.85] [@media(max-width:1000px)]:text-[0.95rem]">
-          社員が体ごと一体になる、
+          社員が一体になる、
           <br className="hidden md:block" />
           ライブ感あふれる体験型ウェルネス研修。
         </p>
 
         <a
-          href="#cta"
+          href={cta.url}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center justify-center bg-[var(--color-navy)] text-white font-black text-base md:text-lg px-8 py-4 rounded-xl hover:opacity-90 transition-opacity"
         >
           無料体験を申し込む

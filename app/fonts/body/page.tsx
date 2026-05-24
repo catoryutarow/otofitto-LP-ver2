@@ -78,7 +78,7 @@ export default function BodyFontsPage() {
 
                 {/* Body 1 — candidate font */}
                 <p className={`${s.className} text-base md:text-[1.05rem] font-bold leading-[1.9] text-[var(--color-text-muted)]`}>
-                  音楽 × フィットネスの90分で、社員が体ごと一体になる、ライブ感あふれる体験型ウェルネス研修。特別な設備・準備物不要。出張型で全国対応。
+                  音楽 × フィットネスの90分で、社員が一体になる、ライブ感あふれる体験型ウェルネス研修。特別な設備・準備物不要。出張型で全国対応。
                 </p>
 
                 {/* Body 2 — list */}

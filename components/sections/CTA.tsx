@@ -69,7 +69,21 @@ export function CTA() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-wrap items-center gap-4 [@media(max-width:1000px)]:mt-10">
+        <div className="mt-12 [@media(max-width:1000px)]:mt-10">
+          <a
+            href={cta.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center bg-[var(--color-navy)] text-white font-black text-base md:text-lg px-8 py-4 rounded-xl hover:opacity-90 transition-opacity"
+          >
+            無料体験を申し込む
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center gap-4">
           <span className="inline-flex items-center bg-[var(--color-navy)] text-white px-4 py-1.5 rounded-full text-[0.85rem] font-black">
             全国対応可
           </span>
