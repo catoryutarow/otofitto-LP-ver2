@@ -41,8 +41,8 @@ export function Hero() {
   // higher up (further back) — matches real-world perspective stacking.
   const peoples = [
     { src: "/peoples/c5-blue-smile.png", top: "6%", left: "30%" },   // back-most
-    { src: "/peoples/c6-dance.png", top: "10%", left: "78%" },
-    { src: "/peoples/c1-champion.png", top: "14%", left: "-2%" },
+    { src: "/peoples/c1-champion.png", top: "10%", left: "78%" },    // 元 c6 の位置 (右端)
+    { src: "/peoples/c6-dance.png", top: "14%", left: "1%" },        // 元 c1 の位置 (左端)
     { src: "/peoples/c4-cap-run.png", top: "20%", left: "46%" },
     { src: "/peoples/c3-green-girl.png", top: "28%", left: "14%" },
     { src: "/peoples/c2-grey-walk.png", top: "32%", left: "62%" },   // front-most
@@ -68,7 +68,7 @@ export function Hero() {
       {/* Instructor portraits (3 only) — PC: absolute on the left, mirrors
           the speech-bubble across the headline. No tilt — symmetry of position
           and shape is enough. */}
-      <div className="hidden md:block absolute left-[10%] xl:left-[12%] top-[46%] z-[15] w-[26%] xl:w-[24%]">
+      <div className="hidden lg:block absolute left-[6%] xl:left-[8%] top-[46%] z-[15] w-[26%] xl:w-[24%]">
         <div className="grid grid-cols-3 gap-2">
           {INSTRUCTOR_PORTRAITS.map((p) => (
             <div
@@ -150,9 +150,9 @@ export function Hero() {
           新しい研修
         </h1>
 
-        <p className="text-base md:text-lg mb-9 font-bold text-[var(--color-navy)] leading-[1.85] [@media(max-width:1000px)]:text-[0.95rem]">
+        <p className="mb-9 font-bold text-[var(--color-navy)] leading-[1.85] text-[0.95rem] md:text-[clamp(0.9rem,_1vw,_1.15rem)]">
           社員が一体になる、
-          <br className="hidden md:block" />
+          <br />
           ライブ感あふれる体験型ウェルネス研修。
         </p>
 
@@ -169,7 +169,7 @@ export function Hero() {
         </a>
 
         {/* SP only — instructor portraits (left) + smaller bubble (right) */}
-        <div className="md:hidden flex items-center gap-3 mt-8">
+        <div className="lg:hidden flex items-center gap-3 mt-8 max-w-[460px] mx-auto">
           <div className="grid grid-cols-3 gap-1.5 flex-1 min-w-0">
             {INSTRUCTOR_PORTRAITS.map((p) => (
               <div
@@ -193,7 +193,7 @@ export function Hero() {
                 className="block text-[0.78rem] leading-[1.4] text-[var(--color-navy)] font-bold whitespace-nowrap"
                 style={{ fontFamily: "var(--font-rocknroll)" }}
               >
-                <span className="block -translate-x-1.5">世界チャンピオンが、</span>
+                <span className="block -translate-x-3.5">世界チャンピオンが、</span>
                 <span className="block">あなたの会社に来る<span className="tracking-[-0.2em]">！？</span></span>
               </span>
             </SpeechBubble>
@@ -205,7 +205,7 @@ export function Hero() {
           Desktop: リボン (top-44%, h~220px = 下端 ≈61%) の下部・右側に配置。
           リボンから泡が出ているような視覚的関係に。 */}
       <div
-        className="hidden md:block absolute top-[48%] right-[5%] xl:right-[8%] z-20"
+        className="hidden lg:block absolute top-[46%] right-[6%] xl:right-[8%] z-20"
         style={{ transform: "rotate(-4deg)" }}
       >
         <SpeechBubble>
@@ -213,7 +213,7 @@ export function Hero() {
             className="block text-[1.3rem] xl:text-[1.55rem] leading-[1.55] text-[var(--color-navy)] font-bold whitespace-nowrap"
             style={{ fontFamily: "var(--font-rocknroll)" }}
           >
-            <span className="block -translate-x-2 md:-translate-x-3">世界チャンピオンが、</span>
+            <span className="block -translate-x-5 md:-translate-x-6">世界チャンピオンが、</span>
             <span className="block">あなたの会社に来る<span className="tracking-[-0.2em]">！？</span></span>
           </span>
         </SpeechBubble>

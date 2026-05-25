@@ -49,13 +49,13 @@ function Card({ p, accent }: { p: Instructor; accent: string }) {
       {/* TEXT PANEL: white parallelogram below photo — solves gold-bg readability.
           Same lean as photo so the unit reads as one connected card. */}
       <div
-        className="relative bg-white px-7 py-6 mr-3 [@media(max-width:900px)]:px-6 [@media(max-width:900px)]:py-5"
+        className="relative bg-white px-7 py-6 mr-3 [@media(max-width:1000px)]:pl-12 [@media(max-width:1000px)]:pr-6 [@media(max-width:1000px)]:py-5"
         style={{ clipPath: CLIP }}
       >
         <h3 className="text-[1.4rem] mb-1 font-black text-[var(--color-navy)]">
           {p.name}
         </h3>
-        <p className="text-[0.92rem] font-bold mb-4 text-[var(--color-primary)]">
+        <p className="text-[0.82rem] [@media(min-width:1000px)]:text-[0.88rem] font-bold mb-4 text-[var(--color-primary)] whitespace-nowrap">
           {p.role}
         </p>
         <ul className="text-[0.88rem] font-bold space-y-1.5 text-[var(--color-navy)] mb-4">
@@ -98,7 +98,7 @@ export function Instructors() {
           </SectionTitleBadge>
         </div>
 
-        <div className="grid grid-cols-3 gap-10 [@media(max-width:900px)]:grid-cols-1 [@media(max-width:900px)]:gap-14">
+        <div className="grid grid-cols-3 gap-10 [@media(max-width:1000px)]:grid-cols-1 [@media(max-width:1000px)]:gap-14">
           {instructors.map((p, i) => (
             <Card key={p.name} p={p} accent={accents[i]} />
           ))}

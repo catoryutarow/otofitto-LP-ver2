@@ -132,7 +132,8 @@ export const movingMembers: MovingMember[] = [
     catchphrase: "明るく、楽しく、激しく。",
     details: [
       "元高校球児・健康マニア社長",
-      "楽天・Amazon出身、230社超のEC事業を支援",
+      "楽天・Amazon出身",
+      "230社超のEC事業を支援",
     ],
     message: "経営者目線で音頭をとり、社員と一緒に全力で動く",
   },

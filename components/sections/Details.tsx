@@ -40,6 +40,32 @@ export function Details() {
             </div>
           ))}
         </dl>
+
+        {/* Pricing — 既存 dl の行と同じ grid で揃え。カード枠なし。 */}
+        <div className="border-t border-[var(--color-navy)]/15 grid grid-cols-[180px_1fr] gap-8 py-7 [@media(max-width:1000px)]:grid-cols-1 [@media(max-width:1000px)]:gap-3 [@media(max-width:1000px)]:py-6">
+          <dt className="text-[var(--color-navy)] font-black text-[0.95rem] tracking-wider">
+            料金
+          </dt>
+          <dd className="font-bold text-[var(--color-navy)]">
+            <p className="flex items-baseline gap-1.5 mb-2">
+              <span className="font-black leading-none text-[1.05rem] mr-2">
+                90分プログラム
+              </span>
+              <span className="font-black leading-none text-[2.2rem] md:text-[2.6rem]">
+                10
+              </span>
+              <span className="font-black text-[1.15rem] md:text-[1.3rem]">
+                万円〜
+              </span>
+              <span className="text-[0.85rem] font-bold text-[var(--color-text-muted)] ml-2">
+                (要相談)
+              </span>
+            </p>
+            <p className="text-[0.85rem] text-[var(--color-text-muted)] font-bold leading-[1.85]">
+              参加人数・会場・実施エリア・カスタム要素により変動します。詳細はお問い合わせ時にご相談ください。
+            </p>
+          </dd>
+        </div>
       </div>
     </ScrollReveal>
   );

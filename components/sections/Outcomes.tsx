@@ -20,7 +20,7 @@ export function Outcomes() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-16 gap-y-14 [@media(max-width:900px)]:grid-cols-1 [@media(max-width:900px)]:gap-y-10">
+        <div className="grid grid-cols-2 gap-x-16 gap-y-14 [@media(max-width:1000px)]:grid-cols-1 [@media(max-width:1000px)]:gap-y-10">
           {benefits.map((b, index) => (
             <div key={b.title} className="relative">
               <span className="block text-[var(--color-secondary)] font-black text-[3.5rem] leading-none mb-3 tracking-wider [@media(max-width:1000px)]:text-[2.6rem]">

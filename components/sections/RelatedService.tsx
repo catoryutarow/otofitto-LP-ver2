@@ -2,6 +2,9 @@ import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionTitleBadge } from "@/components/SectionTitleBadge";
 
+// Same parallelogram shape as Instructors/MusicSupport for LP-wide coherence
+const CLIP = "polygon(7% 0, 100% 0, 93% 100%, 0 100%)";
+
 export function RelatedService() {
   return (
     <ScrollReveal
@@ -25,7 +28,7 @@ export function RelatedService() {
         aria-hidden
         width={80}
         height={80}
-        className="hidden md:block absolute bottom-16 left-[42%] w-10 lg:w-14 rotate-[16deg] pointer-events-none select-none"
+        className="hidden md:block absolute bottom-12 left-[4%] w-10 lg:w-14 rotate-[16deg] pointer-events-none select-none"
       />
       <Image
         src="/peoples/note-single.png"
@@ -33,7 +36,7 @@ export function RelatedService() {
         aria-hidden
         width={80}
         height={80}
-        className="hidden md:block absolute top-[58%] right-[35%] w-8 lg:w-10 -rotate-[20deg] pointer-events-none select-none"
+        className="hidden md:block absolute top-[55%] right-[4%] w-8 lg:w-10 -rotate-[20deg] pointer-events-none select-none"
       />
 
       <div className="w-full max-w-[1080px] xl:max-w-[1200px] 2xl:max-w-[1320px] mx-auto px-6 md:px-12 relative z-10">
@@ -41,7 +44,52 @@ export function RelatedService() {
           <SectionTitleBadge align="left">関連サービス「生演奏カラオケ」</SectionTitleBadge>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-10 md:gap-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-10 md:gap-14 items-start">
+          {/* Live photos — 平行四辺形クリップ枠なし。1大2小の3枚構成 */}
+          <div className="space-y-3 md:space-y-4">
+            {/* Big top: バンド全体 */}
+            <div
+              className="relative w-full aspect-[16/10]"
+              style={{ clipPath: CLIP }}
+            >
+              <Image
+                src="/live-band.jpg"
+                alt="生演奏カラオケ ライブの様子"
+                fill
+                sizes="(max-width: 1000px) 90vw, 50vw"
+                className="object-cover object-center"
+              />
+            </div>
+            {/* Bottom row: ベース + ボーカル (各 50%) */}
+            <div className="grid grid-cols-2 gap-3 md:gap-4">
+              <div
+                className="relative w-full aspect-[3/4]"
+                style={{ clipPath: CLIP }}
+              >
+                <Image
+                  src="/live-bass.jpg"
+                  alt="ベーシスト演奏"
+                  fill
+                  sizes="(max-width: 1000px) 45vw, 25vw"
+                  className="object-cover object-center"
+                />
+              </div>
+              <div
+                className="relative w-full aspect-[3/4]"
+                style={{ clipPath: CLIP }}
+              >
+                <Image
+                  src="/live-vocal.jpg"
+                  alt="ボーカル熱唱"
+                  fill
+                  sizes="(max-width: 1000px) 45vw, 25vw"
+                  className="object-cover object-[50%_25%]"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Text column */}
           <div>
             <p className="text-xs font-black tracking-[0.2em] text-[var(--color-navy)] mb-4">
               SPECIAL OFFERS
@@ -52,14 +100,13 @@ export function RelatedService() {
               <span className="whitespace-nowrap">「思い出のライブ」</span>
               <span className="whitespace-nowrap">へ。</span>
             </h3>
-            <p className="text-base font-black text-[var(--color-navy)] mb-2">
+            <p className="text-base font-black text-[var(--color-navy)] mb-5">
               周年・忘年会・内定式・成果報告会 ——
             </p>
-          </div>
-
-          <div className="space-y-6">
-            <p className="leading-[2] font-bold text-[var(--color-navy)] text-[1.05rem]">
-              会社の節目には、プロの生演奏 × 社員の歌声で、もうひとつの
+            <p className="leading-[2] font-bold text-[var(--color-navy)] text-[1.05rem] mb-5">
+              会社の節目には、プロの生演奏 × 社員の歌声で、
+              <br />
+              もうひとつの
               <span className="relative inline-block font-black text-[var(--color-navy)] mx-1 whitespace-nowrap">
                 <span className="relative z-10">オトフィット</span>
                 <span
@@ -69,7 +116,7 @@ export function RelatedService() {
               </span>
               を。
             </p>
-            <p className="font-black text-[var(--color-navy)] text-[1.05rem] leading-[1.85] border-l-4 border-[var(--color-navy)] pl-5">
+            <p className="font-black text-[var(--color-navy)] text-[1.05rem] leading-[1.85] border-l-4 border-[var(--color-navy)] pl-5 mb-5">
               オトフィットの音楽サポートチームが、特別な一夜まで一貫伴走します。
             </p>
             <p className="text-[0.9rem] font-bold text-[var(--color-navy)] leading-[1.85]">
