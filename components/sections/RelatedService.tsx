@@ -117,10 +117,10 @@ export function RelatedService() {
               を。
             </p>
             <p className="font-black text-[var(--color-navy)] text-[1.05rem] leading-[1.85] border-l-4 border-[var(--color-navy)] pl-5 mb-5">
-              オトフィットの音楽サポートチームが、特別な一夜まで一貫伴走します。
+              オトフィットの音楽サポートチームが、<br/>特別な一夜まで一貫伴走します。
             </p>
             <p className="text-[0.9rem] font-bold text-[var(--color-navy)] leading-[1.85]">
-              詳細資料をご用意しています。お問い合わせ時にお気軽にお申し付けください。
+              詳細資料をご用意しています。<br/>お問い合わせ時にお気軽にお申し付けください。
             </p>
           </div>
         </div>

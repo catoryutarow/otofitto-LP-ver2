@@ -9,10 +9,10 @@ const CLIP = "polygon(7% 0, 100% 0, 93% 100%, 0 100%)";
 // Two distinct accent colors so 山本/井上 read as a complementary duo
 const accents = ["var(--color-primary)", "var(--color-accent-red)"];
 
-// Real photos for 山本 (yamamoto.jpg) and 井上 (inoue.png) — keyed by name.
+// Real photos for 山本 (yamamoto.jpg) and 井上 (inoue.jpg) — keyed by name.
 const photoByName: Record<string, { src: string; objectPosition: string }> = {
   "山本 慎二郎": { src: "/yamamoto.jpg", objectPosition: "50% 30%" },
-  "井上 美紀":   { src: "/inoue.png",    objectPosition: "50% 30%" },
+  "井上 美紀":   { src: "/inoue.jpg",    objectPosition: "35% 30%" },
 };
 
 export function MovingTeam() {

@@ -16,8 +16,8 @@ export function SectionTitleBadge({
   const onNavy = variant === "onNavy";
   const sizeClass =
     size === "sm"
-      ? "text-[1.35rem] md:text-[1.65rem] [@media(max-width:1000px)]:text-[1.1rem]"
-      : "text-[1.6rem] md:text-[2rem] [@media(max-width:1000px)]:text-[1.3rem]";
+      ? "text-[1.35rem] md:text-[1.65rem] [@media(max-width:1000px)]:text-[1.05rem] [@media(max-width:480px)]:text-[0.9rem]"
+      : "text-[1.6rem] md:text-[2rem] [@media(max-width:1000px)]:text-[1.25rem] [@media(max-width:480px)]:text-[1.05rem]";
   const barHeight = size === "sm" ? "h-7 md:h-8" : "h-8 md:h-10";
   return (
     <div className={`inline-block ${align === "center" ? "text-center" : "text-left"}`}>

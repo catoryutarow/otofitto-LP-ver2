@@ -223,10 +223,32 @@ export function Hero() {
           Same relative positions (top%/left%) as before — now spread across
           the full viewport width instead of a right-column box. */}
       <div className="relative w-full mt-12 md:mt-16 aspect-[16/6] [@media(max-width:1000px)]:aspect-[16/11] [@media(max-width:1000px)]:mt-6">
+        {/* SP only — scattered notes around characters.
+            キャラ位置 (c1-champion top 10-45%/left 78-104% など) を避けて
+            左ガター・上下端・キャラ列の隙間に配置 */}
+        {[
+          { src: "/peoples/note-double.png", top: "0%",  left: "60%", w: "w-6",  rot: "-14deg" },
+          { src: "/peoples/note-single.png", top: "3%",  left: "3%",  w: "w-5",  rot: "-12deg" },
+          { src: "/peoples/note-single.png", top: "40%", left: "1%",  w: "w-4",  rot: "-20deg" },
+          { src: "/peoples/note-double.png", top: "70%", left: "85%", w: "w-6",  rot: "12deg"  },
+          { src: "/peoples/note-single.png", top: "78%", left: "2%",  w: "w-5",  rot: "26deg"  },
+        ].map((n, i) => (
+          <Image
+            key={`spnote-${i}`}
+            src={n.src}
+            alt=""
+            aria-hidden
+            width={80}
+            height={80}
+            style={{ top: n.top, left: n.left, transform: `rotate(${n.rot})` }}
+            className={`md:hidden absolute ${n.w} origin-center pointer-events-none select-none z-0`}
+          />
+        ))}
+
         {peoples.map((c, i) => (
           <div
             key={i}
-            className="absolute w-[14%] aspect-[3/4] [@media(max-width:1000px)]:w-[26%]"
+            className="absolute w-[14%] aspect-[3/4] [@media(max-width:1000px)]:w-[26%] z-10"
             style={{ top: c.top, left: c.left }}
           >
             <Image

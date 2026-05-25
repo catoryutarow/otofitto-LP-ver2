@@ -1,10 +1,7 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionTitleBadge } from "@/components/SectionTitleBadge";
-import { musicMembers, type MusicMember } from "@/lib/data";
+import { musicMembers } from "@/lib/data";
 
 const tagColor: Record<"green" | "blue" | "pink", string> = {
   green: "text-[var(--color-accent-green)]",
@@ -23,21 +20,8 @@ const accentBg: Record<"green" | "blue" | "pink", string> = {
 };
 
 export function MusicSupport() {
-  // SP only — tap mini icon to open profile modal
-  const [active, setActive] = useState<MusicMember | null>(null);
-
-  // Lock body scroll while modal is open
-  useEffect(() => {
-    if (!active) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, [active]);
-
   return (
-    <ScrollReveal as="section" id="music-support" className="bg-white section-pad relative overflow-hidden">
+    <ScrollReveal as="section" id="music-support" className="bg-white pt-[100px] pb-[40px] md:pt-[100px] md:pb-[50px] [@media(max-width:1000px)]:pt-[60px] [@media(max-width:1000px)]:pb-[30px] relative overflow-hidden">
       {/* Decorative music notes scattered as background — pink-tinted on white,
           low opacity so they sit behind content as ambient rhythm. */}
       <Image
@@ -86,10 +70,10 @@ export function MusicSupport() {
             橋渡しする2ステップ。Left-aligned で読み下しやすく。 */}
         <div className="max-w-[820px] md:max-w-[1080px] mx-auto mb-14 md:mb-16 [@media(max-width:1000px)]:mb-12">
           {/* Before — 課題提示 */}
-          <p className="text-[1.25rem] md:text-[1.55rem] font-black text-[var(--color-text-muted)] mb-5 [@media(max-width:1000px)]:text-[1.15rem]">
+          <p className="text-[1.25rem] md:text-[1.55rem] font-black text-[var(--color-text-muted)] mb-5 [@media(max-width:1000px)]:text-[1.1rem] [@media(max-width:480px)]:text-[0.95rem]">
             音楽を使った研修? めんどくさそう…
           </p>
-          <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-7 gap-y-2 text-[0.95rem] md:text-base text-[var(--color-text-muted)] font-bold [@media(max-width:1000px)]:gap-x-5">
+          <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-7 gap-y-2 text-[0.95rem] md:text-base text-[var(--color-text-muted)] font-bold [@media(max-width:1000px)]:gap-x-5 [@media(max-width:480px)]:text-[0.8rem] [@media(max-width:480px)]:gap-x-3 [@media(max-width:480px)]:gap-y-1.5">
             {[
               "・機材手配",
               "・会場へのアジャスト",
@@ -118,52 +102,52 @@ export function MusicSupport() {
             </div>
           </div>
 
-          {/* After — 「全部お任せ！」を吹き出し (bubble2) に格納し、
-              3人メンバーが横に並んで「言っている」関係性に。
-              PC/SP 両方で吹き出し+3人を横並びにする。 */}
-          <div className="flex items-end justify-between gap-3 md:gap-10 mt-3 mb-7">
-            {/* 全部お任せ！吹き出し */}
+          {/* After — SP: 縦 (吹き出し上→3人下) / PC: 横 (吹き出し左→3人右) */}
+          <div className="flex flex-col items-center gap-5 mt-3 mb-8 md:flex-row md:items-start md:justify-between md:gap-10">
+            {/* 全部お任せ！吹き出し
+                SP=bubble3.png (しっぽ中央下) / PC=bubble2.png (しっぽ右下) */}
             <div
-              className="inline-block shrink-0 md:pl-[72px] md:pr-[36px] md:pt-[33px] md:pb-[44px] pl-7 pr-3 pt-4 pb-7 lg:translate-x-[100px] md:-translate-y-[100px]"
-              style={{
-                backgroundImage: "url(/bubble2.png)",
-                backgroundSize: "100% 100%",
-                backgroundRepeat: "no-repeat",
-              }}
+              className="
+                inline-block shrink-0 bg-no-repeat
+                bg-[url(/bubble3.png)] md:bg-[url(/bubble2.png)]
+                [background-size:100%_100%]
+                pl-[52px] pr-7 pt-7 pb-11
+                md:pl-20 md:pr-10 md:pt-9 md:pb-14
+              "
             >
-              <h3 className="text-[1.3rem] md:text-[2.5rem] font-black text-[var(--color-navy)] leading-[1.1] whitespace-nowrap">
+              <h3 className="text-[1.7rem] md:text-[2.5rem] xl:text-[2.8rem] font-black text-[var(--color-navy)] leading-[1.1] whitespace-nowrap [@media(max-width:480px)]:text-[1.35rem]">
                 全部お任せ！
               </h3>
             </div>
 
-            {/* Compact member trio — PC: 情報あり、SP: アイコンのみタップ可 */}
-            <div className="flex items-end gap-1.5 md:gap-4 shrink-0 lg:-translate-x-[100px]">
+            {/* 3 members — PC/SP両方でアイコン+情報フル表示 */}
+            <div className="flex items-start justify-center gap-3 md:gap-5 shrink-0 [@media(max-width:480px)]:gap-2">
               {musicMembers.map((m) => (
-                <div key={m.name} className="text-center w-[58px] md:w-[136px]">
-                  <button
-                    type="button"
-                    onClick={() => setActive(m)}
-                    className="md:pointer-events-none relative w-full aspect-[4/5] bg-white overflow-hidden mb-1 md:mb-2 cursor-pointer md:cursor-default"
+                <div
+                  key={m.name}
+                  className="text-center w-[122px] md:w-[160px] xl:w-[180px] [@media(max-width:480px)]:w-[96px]"
+                >
+                  <div
+                    className="relative w-full aspect-[4/5] bg-white overflow-hidden mb-2"
                     style={{ clipPath: CLIP }}
-                    aria-label={`${m.name} のプロフィールを開く`}
                   >
                     <Image
                       src={m.image}
                       alt={m.name}
                       fill
-                      sizes="(max-width: 1000px) 60px, 140px"
+                      sizes="(max-width: 1000px) 110px, 180px"
                       className="object-cover object-top"
                     />
-                  </button>
-                  <p className={`hidden md:block text-[0.7rem] font-black tracking-[0.1em] ${tagColor[m.tagColor]}`}>
+                  </div>
+                  <p className={`text-[0.62rem] md:text-[0.75rem] font-black tracking-[0.08em] md:tracking-[0.1em] mt-1 ${tagColor[m.tagColor]}`}>
                     {m.roleTag}
                   </p>
-                  <p className="hidden md:block text-[0.85rem] font-black text-[var(--color-navy)] mt-0.5 leading-tight whitespace-nowrap">
+                  <p className="text-[0.78rem] md:text-[0.95rem] font-black text-[var(--color-navy)] mt-0.5 leading-tight whitespace-nowrap">
                     {m.name}
                   </p>
-                  <p className="hidden md:block text-[0.65rem] font-bold text-[var(--color-text-muted)] mt-1 leading-[1.6]">
+                  <p className="text-[0.6rem] md:text-[0.72rem] font-bold text-[var(--color-text-muted)] mt-1 md:mt-1.5 leading-[1.55] md:leading-[1.65] [word-break:keep-all]">
                     {m.details.map((d, i) => (
-                      <span key={d}>
+                      <span key={d} className="whitespace-nowrap inline-block">
                         {d}
                         {i < m.details.length - 1 && <br />}
                       </span>
@@ -176,7 +160,7 @@ export function MusicSupport() {
 
           {/* SP hint — 横スワイプで全6項目 */}
           <p className="md:hidden flex items-center gap-2 text-[0.7rem] font-black tracking-[0.15em] text-[var(--color-text-muted)] mt-7 mb-3">
-            → 横スワイプで全6項目
+            → 横にスワイプ
           </p>
 
           {/* 6 task pairs — PC: 2 cols × 3 rows grid / SP: 横スクロールカルーセル */}
@@ -259,69 +243,16 @@ export function MusicSupport() {
             ))}
           </div>
 
-          {/* 締め — 累計実績 + 会議室不安への一言 */}
-          <p className="text-[0.9rem] md:text-[0.95rem] font-bold text-[var(--color-text-muted)] leading-[1.95] mt-7 [@media(max-width:1000px)]:text-[0.85rem]">
-            企業イベント・教育機関・福祉施設まで、累計30以上の現場で
-            <strong className="text-[var(--color-navy)]">「演奏家であり場のプロデューサー」</strong>
-            として動いてきました。
-            「会議室しか用意できない」「うちの環境で本当にできる?」── そんな環境こそ得意です。安心してご相談ください。
-          </p>
-        </div>
-
-        {/* SP profile modal — tap mini icon to open */}
-        {active && (
-          <div
-            className="md:hidden fixed inset-0 z-[80] bg-black/50 flex items-center justify-center p-5"
-            onClick={() => setActive(null)}
-            role="dialog"
-            aria-modal="true"
-            aria-label={`${active.name} プロフィール`}
-          >
-            <div
-              className="relative bg-white rounded-2xl w-full max-w-[360px] p-6 pt-8"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                type="button"
-                onClick={() => setActive(null)}
-                className="absolute top-3 right-3 w-8 h-8 inline-flex items-center justify-center rounded-full bg-[var(--color-navy)] text-white text-sm font-black"
-                aria-label="閉じる"
-              >
-                ✕
-              </button>
-              <div
-                className="relative w-full max-w-[180px] aspect-[4/5] mx-auto bg-white overflow-hidden mb-5"
-                style={{
-                  clipPath: CLIP,
-                  outline: `4px solid ${accentBg[active.tagColor]}`,
-                  outlineOffset: "-4px",
-                }}
-              >
-                <Image
-                  src={active.image}
-                  alt={active.name}
-                  fill
-                  sizes="180px"
-                  className="object-cover object-top"
-                />
-              </div>
-              <p className={`text-center text-[0.78rem] font-black tracking-[0.15em] mb-1 ${tagColor[active.tagColor]}`}>
-                {active.roleTag}
-              </p>
-              <h3 className="text-center text-[1.4rem] font-black text-[var(--color-navy)] mb-4">
-                {active.name}
-              </h3>
-              <ul className="space-y-1.5 text-[0.9rem] font-bold text-[var(--color-text-muted)] leading-[1.65]">
-                {active.details.map((d) => (
-                  <li key={d} className="flex items-start gap-2">
-                    <span className="shrink-0 inline-block w-1.5 h-1.5 mt-[0.55em] bg-[var(--color-secondary)] rounded-sm" />
-                    <span>{d}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* 締め — 累計実績 + 会議室不安への一言。上下バランス均等 */}
+          <div className="pt-10 md:pt-12">
+            <p className="text-[0.9rem] md:text-[0.95rem] font-bold text-[var(--color-text-muted)] leading-[1.95] [@media(max-width:1000px)]:text-[0.85rem]">
+              企業イベント・教育機関・福祉施設まで、累計30以上の現場で
+              <strong className="text-[var(--color-navy)]">「演奏家であり場のプロデューサー」</strong>
+              として動いてきました。
+              「会議室しか用意できない」「うちの環境で本当にできる?」── そんな環境こそ得意です。安心してご相談ください。
+            </p>
           </div>
-        )}
+        </div>
 
       </div>
     </ScrollReveal>

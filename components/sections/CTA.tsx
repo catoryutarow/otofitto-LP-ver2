@@ -91,7 +91,7 @@ export function CTA() {
         </div>
 
         <p className="text-[0.85rem] text-[var(--color-text-muted)] leading-[1.9] font-bold mt-10 max-w-xl">
-          本イベントはオトフィット実施チーム (株式会社モテコロ) と株式会社スポルアップが連携してご提供するサービスです。
+          本イベントはオトフィット実施チーム (株式会社モテコロ) と<br/>株式会社スポルアップが連携してご提供するサービスです。
         </p>
       </div>
     </section>

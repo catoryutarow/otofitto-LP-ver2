@@ -49,7 +49,7 @@ export function Intro() {
               </span>
             </p>
             <p className="inline-flex items-center gap-2 text-sm font-black text-[var(--color-navy)] bg-[var(--color-secondary)] px-4 py-2 rounded-full">
-              現場までフル機材持ち込み・ファシリ運営まで一括
+              現場までフル機材持ち込み。運営までワンストップ。
             </p>
           </div>
         </div>
