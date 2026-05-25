@@ -38,7 +38,7 @@ export function MusicSupport() {
         aria-hidden
         width={80}
         height={80}
-        className="hidden md:block absolute bottom-32 left-[6%] w-10 lg:w-12 -rotate-[8deg] pointer-events-none select-none"
+        className="hidden md:block absolute bottom-12 left-[1.5%] w-8 lg:w-10 -rotate-[8deg] pointer-events-none select-none"
       />
       <Image
         src="/peoples/note-single.png"

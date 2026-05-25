@@ -169,8 +169,8 @@ export function Hero() {
         </a>
 
         {/* SP only — instructor portraits (left) + smaller bubble (right) */}
-        <div className="lg:hidden flex items-center gap-3 mt-8 max-w-[460px] mx-auto">
-          <div className="grid grid-cols-3 gap-1.5 flex-1 min-w-0">
+        <div className="lg:hidden flex items-center gap-4 md:gap-6 mt-8 max-w-[460px] md:max-w-[640px] mx-auto">
+          <div className="grid grid-cols-3 gap-1.5 md:gap-2.5 flex-1 min-w-0">
             {INSTRUCTOR_PORTRAITS.map((p) => (
               <div
                 key={p.src}
@@ -181,7 +181,7 @@ export function Hero() {
                   src={p.src}
                   alt=""
                   fill
-                  sizes="(max-width: 1000px) 80px, 130px"
+                  sizes="(max-width: 1000px) 80px, 140px"
                   className={`object-cover ${p.obj}`}
                 />
               </div>
@@ -190,7 +190,7 @@ export function Hero() {
           <div className="shrink-0" style={{ transform: "rotate(-4deg)" }}>
             <SpeechBubble size="sm">
               <span
-                className="block text-[0.78rem] leading-[1.4] text-[var(--color-navy)] font-bold whitespace-nowrap"
+                className="block text-[0.78rem] md:text-[1.05rem] leading-[1.4] text-[var(--color-navy)] font-bold whitespace-nowrap"
                 style={{ fontFamily: "var(--font-rocknroll)" }}
               >
                 <span className="block -translate-x-3.5">世界チャンピオンが、</span>
