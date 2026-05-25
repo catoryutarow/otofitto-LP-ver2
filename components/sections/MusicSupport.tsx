@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionTitleBadge } from "@/components/SectionTitleBadge";
 import { musicMembers } from "@/lib/data";
+import { asset } from "@/lib/asset";
 
 const tagColor: Record<"green" | "blue" | "pink", string> = {
   green: "text-[var(--color-accent-green)]",
@@ -109,11 +110,15 @@ export function MusicSupport() {
             <div
               className="
                 inline-block shrink-0 bg-no-repeat
-                bg-[url(/bubble3.png)] md:bg-[url(/bubble2.png)]
+                [background-image:var(--bubble-sm)] md:[background-image:var(--bubble-md)]
                 [background-size:100%_100%]
                 pl-[52px] pr-7 pt-7 pb-11
                 md:pl-20 md:pr-10 md:pt-9 md:pb-14
               "
+              style={{
+                ["--bubble-sm" as string]: `url(${asset("/bubble3.png")})`,
+                ["--bubble-md" as string]: `url(${asset("/bubble2.png")})`,
+              }}
             >
               <h3 className="text-[1.7rem] md:text-[2.5rem] xl:text-[2.8rem] font-black text-[var(--color-navy)] leading-[1.1] whitespace-nowrap [@media(max-width:480px)]:text-[1.35rem]">
                 全部お任せ！

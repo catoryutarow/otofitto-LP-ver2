@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { cta } from "@/lib/data";
+import { asset } from "@/lib/asset";
 
 // Hand-drawn speech bubble — uses /bubble.png as a stretched background so the
 // text drives the size. The png is 512×160 (≈16:5) with a tail at the
@@ -19,7 +20,7 @@ function SpeechBubble({
     <div
       className={`relative inline-block ${padding}`}
       style={{
-        backgroundImage: "url(/bubble.png)",
+        backgroundImage: `url(${asset("/bubble.png")})`,
         backgroundSize: "100% 100%",
         backgroundRepeat: "no-repeat",
       }}
