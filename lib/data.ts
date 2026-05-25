@@ -144,6 +144,7 @@ export const movingMembers: MovingMember[] = [
     details: [
       "筑波大学 体育専門学群出身",
       "フィットネストレーナー × 鍼灸師",
+      " ",
     ],
     message: "参加者の身体に寄り添い、痛み・疲労をその場でケア",
   },
