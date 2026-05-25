@@ -93,6 +93,36 @@ export function CTA() {
         <p className="text-[0.85rem] text-[var(--color-text-muted)] leading-[1.9] font-bold mt-10 max-w-xl">
           本イベントはオトフィット実施チーム (株式会社モテコロ) と<br/>株式会社スポルアップが連携してご提供するサービスです。
         </p>
+
+        {/* Footer 帰属表示: 運営元 spollup.jp へのロゴ＋テキストリンク */}
+        <div className="mt-14 pt-8 border-t border-[var(--color-navy)]/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <a
+            href="https://spollup.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center hover:opacity-70 transition-opacity"
+            aria-label="運営: 株式会社スポルアップ (新規タブ)"
+          >
+            <Image
+              src="/spollup-logo.png"
+              alt="株式会社スポルアップ"
+              width={140}
+              height={34}
+              className="h-8 w-auto"
+            />
+          </a>
+          <p className="text-[0.8rem] text-[var(--color-text-muted)] font-bold">
+            © {new Date().getFullYear()}{" "}
+            <a
+              href="https://spollup.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              株式会社スポルアップ
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );

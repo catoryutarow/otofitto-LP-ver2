@@ -53,6 +53,22 @@ export function Header() {
           >
             無料体験
           </a>
+          {/* 運営元: 株式会社スポルアップ — ロゴで独立帰属表示 */}
+          <a
+            href="https://spollup.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-3 pl-4 border-l border-[var(--color-navy)]/20 flex items-center hover:opacity-70 transition-opacity"
+            aria-label="運営: 株式会社スポルアップ (新規タブ)"
+          >
+            <Image
+              src="/spollup-logo.png"
+              alt="株式会社スポルアップ"
+              width={117}
+              height={28}
+              className="h-7 w-auto"
+            />
+          </a>
         </nav>
 
         <button
@@ -106,6 +122,23 @@ export function Header() {
             className="mt-5 inline-flex justify-center items-center bg-[var(--color-navy)] text-white font-black text-base py-3.5 rounded-xl"
           >
             無料体験を申し込む
+          </a>
+          {/* 運営元: 株式会社スポルアップ */}
+          <a
+            href="https://spollup.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+            className="mt-6 pt-5 border-t border-dashed border-[var(--color-navy)]/20 flex items-center justify-center hover:opacity-70 transition-opacity"
+            aria-label="運営: 株式会社スポルアップ (新規タブ)"
+          >
+            <Image
+              src="/spollup-logo.png"
+              alt="株式会社スポルアップ"
+              width={117}
+              height={28}
+              className="h-7 w-auto"
+            />
           </a>
         </nav>
       </div>
