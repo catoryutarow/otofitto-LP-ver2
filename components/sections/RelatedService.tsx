@@ -104,7 +104,7 @@ export function RelatedService() {
               周年・忘年会・内定式・成果報告会 ——
             </p>
             <p className="leading-[2] font-bold text-[var(--color-navy)] text-[1.05rem] mb-5">
-              会社の節目には、プロの生演奏 × 社員の歌声で、
+              会社の節目には、<br/>プロの生演奏 × 社員の歌声で、
               <br />
               もうひとつの
               <span className="relative inline-block font-black text-[var(--color-navy)] mx-1 whitespace-nowrap">
