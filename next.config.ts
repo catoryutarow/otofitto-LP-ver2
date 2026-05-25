@@ -9,7 +9,10 @@ const nextConfig: NextConfig = {
   assetPrefix: "/otofitto/",
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    // Custom loader prefixes basePath onto /public asset paths so they
+    // resolve correctly under spollup.jp/otofitto/.
+    loader: "custom",
+    loaderFile: "./lib/image-loader.ts",
     formats: ["image/avif", "image/webp"],
   },
 };
