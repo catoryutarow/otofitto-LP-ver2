@@ -47,20 +47,22 @@ export function Details() {
             料金
           </dt>
           <dd className="font-bold text-[var(--color-navy)]">
-            <p className="flex items-baseline gap-1.5 mb-2">
-              <span className="font-black leading-none text-[1.05rem] mr-2">
+            <div className="mb-2">
+              <p className="font-black text-[1rem] mb-1 md:mb-0 md:inline md:mr-3">
                 90分プログラム
+              </p>
+              <span className="inline-flex items-baseline gap-1.5 whitespace-nowrap">
+                <span className="font-black leading-none text-[2.2rem] md:text-[2.6rem]">
+                  10
+                </span>
+                <span className="font-black text-[1.15rem] md:text-[1.3rem]">
+                  万円〜
+                </span>
+                <span className="text-[0.85rem] font-bold text-[var(--color-text-muted)] ml-2">
+                  (要相談)
+                </span>
               </span>
-              <span className="font-black leading-none text-[2.2rem] md:text-[2.6rem]">
-                10
-              </span>
-              <span className="font-black text-[1.15rem] md:text-[1.3rem]">
-                万円〜
-              </span>
-              <span className="text-[0.85rem] font-bold text-[var(--color-text-muted)] ml-2">
-                (要相談)
-              </span>
-            </p>
+            </div>
             <p className="text-[0.85rem] text-[var(--color-text-muted)] font-bold leading-[1.85]">
               参加人数・会場・実施エリア・カスタム要素により変動します。詳細はお問い合わせ時にご相談ください。
             </p>

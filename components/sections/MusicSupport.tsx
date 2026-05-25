@@ -247,8 +247,8 @@ export function MusicSupport() {
             <p className="text-[0.9rem] md:text-[0.95rem] font-bold text-[var(--color-text-muted)] leading-[1.95] [@media(max-width:1000px)]:text-[0.85rem]">
               企業イベント・教育機関・福祉施設まで、累計30以上の現場で
               <strong className="text-[var(--color-navy)]">「演奏家であり場のプロデューサー」</strong>
-              として動いてきました。
-              「会議室しか用意できない」「うちの環境で本当にできる?」── そんな環境こそ得意です。安心してご相談ください。
+              として動いてきました。<br/>
+              「会議室しか用意できない」「うちの環境で本当にできる?」 <br/>そんな環境こそ得意です。安心してご相談ください。
             </p>
           </div>
         </div>
