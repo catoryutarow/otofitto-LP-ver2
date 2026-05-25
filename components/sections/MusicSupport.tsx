@@ -223,7 +223,7 @@ export function MusicSupport() {
                   >
                     ✕
                   </span>
-                  <p className="text-[0.88rem] md:text-[0.92rem] font-bold text-[var(--color-text-muted)] leading-[1.85]">
+                  <p className="text-[0.88rem] md:text-[0.92rem] font-bold text-[var(--color-text-muted)] leading-[1.65]">
                     {row.problem}
                   </p>
                 </div>
@@ -235,7 +235,7 @@ export function MusicSupport() {
                   >
                     ✓
                   </span>
-                  <p className="text-[0.88rem] md:text-[0.92rem] font-bold text-[var(--color-navy)] leading-[1.85]">
+                  <p className="text-[0.88rem] md:text-[0.92rem] font-bold text-[var(--color-navy)] leading-[1.65]">
                     {row.solution}
                   </p>
                 </div>
