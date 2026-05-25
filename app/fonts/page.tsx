@@ -5,7 +5,6 @@ import {
   M_PLUS_1,
   Shippori_Mincho_B1,
   Hina_Mincho,
-  Klee_One,
   Yusei_Magic,
   Kaisei_Decol,
 } from "next/font/google";
@@ -18,7 +17,6 @@ const zenMaru = Zen_Maru_Gothic({ subsets: ["latin"], weight: ["900"], display: 
 const mplus1 = M_PLUS_1({ subsets: ["latin"], weight: ["900"], display: "swap" });
 const shippori = Shippori_Mincho_B1({ subsets: ["latin"], weight: ["800"], display: "swap" });
 const hina = Hina_Mincho({ subsets: ["latin"], weight: ["400"], display: "swap" });
-const klee = Klee_One({ subsets: ["latin"], weight: ["600"], display: "swap" });
 const yusei = Yusei_Magic({ subsets: ["latin"], weight: ["400"], display: "swap" });
 const kaisei = Kaisei_Decol({ subsets: ["latin"], weight: ["700"], display: "swap" });
 
@@ -65,12 +63,6 @@ const samples: Sample[] = [
     adobeEquivalent: "≒ 解ミン 宙",
     mood: "文学的でクリーンな明朝、個性的",
     className: hina.className,
-  },
-  {
-    name: "Klee One (Semibold)",
-    adobeEquivalent: "≒ DNP 秀英にじみ角ゴシック",
-    mood: "手書き・墨筆感、キャラと完全に統一感",
-    className: klee.className,
   },
   {
     name: "Yusei Magic",

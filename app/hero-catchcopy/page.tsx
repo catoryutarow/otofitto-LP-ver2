@@ -27,13 +27,6 @@ const TILT = "rotate(-3deg)";
 
 const variants: Variant[] = [
   {
-    id: "klee",
-    name: "Klee One",
-    desc: "手書き楷書 — フレンドリーで温かみ。先生が黒板に書いた感",
-    fontVar: "var(--font-klee)",
-    catchStyle: { transform: TILT, fontWeight: 600 },
-  },
-  {
     id: "yomogi",
     name: "Yomogi",
     desc: "手書きエッセイ風 — 等身大、ノートに走り書きのような親しみ",

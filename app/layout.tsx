@@ -3,7 +3,6 @@ import {
   Inter,
   Noto_Sans_JP,
   M_PLUS_1,
-  Klee_One,
   Yomogi,
   Yusei_Magic,
   Reggae_One,
@@ -39,7 +38,7 @@ const mplus1 = M_PLUS_1({
 });
 
 // Decorative fonts for catchcopy "あしらい" comparison page
-const klee = Klee_One({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-klee", display: "swap" });
+// (Klee One dropped — Vercel build kept failing to fetch from fonts.gstatic.com)
 const yomogi = Yomogi({ subsets: ["latin"], weight: ["400"], variable: "--font-yomogi", display: "swap" });
 const yusei = Yusei_Magic({ subsets: ["latin"], weight: ["400"], variable: "--font-yusei", display: "swap" });
 const reggae = Reggae_One({ subsets: ["latin"], weight: ["400"], variable: "--font-reggae", display: "swap" });
@@ -78,7 +77,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${inter.variable} ${notoSansJP.variable} ${mplus1.variable} ${klee.variable} ${yomogi.variable} ${yusei.variable} ${reggae.variable} ${rampart.variable} ${shippori.variable} ${hachimaru.variable} ${dotgothic.variable} ${rocknroll.variable} ${kaiseidecol.variable}`}
+      className={`${inter.variable} ${notoSansJP.variable} ${mplus1.variable} ${yomogi.variable} ${yusei.variable} ${reggae.variable} ${rampart.variable} ${shippori.variable} ${hachimaru.variable} ${dotgothic.variable} ${rocknroll.variable} ${kaiseidecol.variable}`}
     >
       <body className="font-sans antialiased">{children}</body>
     </html>
