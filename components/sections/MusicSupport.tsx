@@ -125,7 +125,7 @@ export function MusicSupport() {
               {musicMembers.map((m) => (
                 <div
                   key={m.name}
-                  className="text-center w-[122px] md:w-[160px] xl:w-[180px] [@media(max-width:480px)]:w-[96px]"
+                  className="text-center w-[144px] md:w-[160px] xl:w-[180px] [@media(max-width:480px)]:w-[110px] overflow-hidden"
                 >
                   <div
                     className="relative w-full aspect-[4/5] bg-white overflow-hidden mb-2"
@@ -147,9 +147,8 @@ export function MusicSupport() {
                   </p>
                   <p className="text-[0.6rem] md:text-[0.72rem] font-bold text-[var(--color-text-muted)] mt-1 md:mt-1.5 leading-[1.55] md:leading-[1.65] [word-break:keep-all]">
                     {m.details.map((d, i) => (
-                      <span key={d} className="whitespace-nowrap inline-block">
+                      <span key={d} className="block">
                         {d}
-                        {i < m.details.length - 1 && <br />}
                       </span>
                     ))}
                   </p>
