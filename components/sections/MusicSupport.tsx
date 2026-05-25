@@ -121,11 +121,11 @@ export function MusicSupport() {
             </div>
 
             {/* 3 members — PC/SP両方でアイコン+情報フル表示 */}
-            <div className="flex items-start justify-center gap-3 md:gap-5 shrink-0 [@media(max-width:480px)]:gap-2">
+            <div className="flex items-start justify-center gap-2 md:gap-5 shrink-0 [@media(max-width:480px)]:gap-1.5">
               {musicMembers.map((m) => (
                 <div
                   key={m.name}
-                  className="text-center w-[144px] md:w-[160px] xl:w-[180px] [@media(max-width:480px)]:w-[110px] overflow-hidden"
+                  className="text-center w-[156px] md:w-[160px] xl:w-[180px] [@media(max-width:480px)]:w-[130px] overflow-hidden"
                 >
                   <div
                     className="relative w-full aspect-[4/5] bg-white overflow-hidden mb-2"
