@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionTitleBadge } from "@/components/SectionTitleBadge";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { instructors, type Instructor } from "@/lib/data";
 
 // Same parallelogram shape applied to every layer (backdrop / photo / text panel)
@@ -28,13 +28,11 @@ function Card({ p, accent }: { p: Instructor; accent: string }) {
           className="relative z-10 w-full aspect-[4/5] overflow-hidden"
           style={{ clipPath: CLIP }}
         >
-          <Image
+          <ResponsiveImage
             src={p.image}
             alt={p.name}
             fill
             sizes="(max-width: 900px) 100vw, 33vw"
-            // object-center prevents the subject from being cut by the parallelogram
-            // corners (object-top would push faces into the clipped top-left region)
             className="object-cover object-center"
           />
           <span

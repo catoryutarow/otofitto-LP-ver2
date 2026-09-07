@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionTitleBadge } from "@/components/SectionTitleBadge";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 export function Intro() {
   return (
@@ -10,10 +10,9 @@ export function Intro() {
       className="bg-[var(--color-bg-light)] section-pad relative overflow-hidden"
     >
       {/* Single decorative note — quiet rhythm cue tying intro to music theme. */}
-      <Image
+      <ResponsiveImage
         src="/peoples/note-single.png"
         alt=""
-        aria-hidden
         width={80}
         height={80}
         className="hidden md:block absolute top-20 right-[4%] w-10 lg:w-14 rotate-[18deg] pointer-events-none select-none"
@@ -26,10 +25,10 @@ export function Intro() {
           <SectionTitleBadge align="left">オトフィットとは</SectionTitleBadge>
           <div className="hidden md:flex items-end gap-2 shrink-0">
             <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
-              <Image src="/peoples/c2-grey-walk.png" alt="" fill className="object-contain object-bottom" />
+              <ResponsiveImage src="/peoples/c2-grey-walk.png" alt="" fill className="object-contain object-bottom" />
             </div>
             <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
-              <Image src="/peoples/c6-dance.png" alt="" fill className="object-contain object-bottom" />
+              <ResponsiveImage src="/peoples/c6-dance.png" alt="" fill className="object-contain object-bottom" />
             </div>
           </div>
         </div>
@@ -40,16 +39,30 @@ export function Intro() {
           </p>
 
           <div className="space-y-5">
-            <p className="text-[var(--color-text-muted)] text-[1.05rem] font-bold leading-[2] [@media(max-width:1000px)]:text-base">
-              特別な設備・準備物不要。出張型で全国対応。
-              <br />
-              脳科学的にも効果バツグンな90分。
-              <span className="block mt-1 text-[0.7rem] md:text-[0.75rem] font-medium text-[var(--color-text-muted)]/80 leading-[1.55]">
-                ※運動と音楽の効果に関する複数の研究知見を参考にプログラムを設計しています。
-              </span>
-            </p>
-            <p className="inline-flex items-center gap-2 text-sm font-black text-[var(--color-navy)] bg-[var(--color-secondary)] px-4 py-2 rounded-full">
-              現場までフル機材持ち込み。運営までワンストップ。
+            <ul className="space-y-3">
+              {[
+                "特別な設備・準備物不要",
+                "出張型で全国対応",
+                "運営までワンストップ",
+                "90分の充実プログラム",
+                "脳科学的にも効果バツグン",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-[var(--color-navy)] text-[1.05rem] font-bold leading-[1.6] [@media(max-width:1000px)]:text-base"
+                >
+                  <span
+                    aria-hidden
+                    className="shrink-0 mt-[0.25em] inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--color-secondary)] text-[var(--color-navy)] text-[0.7rem] font-black"
+                  >
+                    ✓
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="pl-8 text-[0.7rem] md:text-[0.75rem] font-medium text-[var(--color-text-muted)]/80 leading-[1.55]">
+              ※運動と音楽の効果に関する複数の研究知見を参考にプログラムを設計しています。
             </p>
           </div>
         </div>

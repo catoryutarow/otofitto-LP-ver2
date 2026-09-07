@@ -37,3 +37,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# 原画像 (scripts/optimize-images.mjs のバックアップ元)
+# public/ 配下に置くと out/ に丸ごとコピーされて配信されてしまうため外出し。
+image-originals/

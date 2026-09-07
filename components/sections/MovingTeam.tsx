@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionTitleBadge } from "@/components/SectionTitleBadge";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { movingMembers } from "@/lib/data";
 
 // Same parallelogram shape as Instructors/MusicSupport for portrait coherence
@@ -30,10 +30,10 @@ export function MovingTeam() {
           </SectionTitleBadge>
           <div className="hidden md:flex items-end gap-2 shrink-0">
             <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
-              <Image src="/peoples/c4-cap-run.png" alt="" fill className="object-contain object-bottom" />
+              <ResponsiveImage src="/peoples/c4-cap-run.png" alt="" fill className="object-contain object-bottom" />
             </div>
             <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
-              <Image src="/peoples/c5-blue-smile.png" alt="" fill className="object-contain object-bottom" />
+              <ResponsiveImage src="/peoples/c5-blue-smile.png" alt="" fill className="object-contain object-bottom" />
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ export function MovingTeam() {
                   style={{ clipPath: CLIP }}
                 >
                   {photoByName[m.name] && (
-                    <Image
+                    <ResponsiveImage
                       src={photoByName[m.name].src}
                       alt={m.name}
                       fill
@@ -72,12 +72,9 @@ export function MovingTeam() {
               <p className="text-xs font-black mb-3 tracking-[0.15em] text-[var(--color-primary)]">
                 {m.label}
               </p>
-              <h3 className="text-[2rem] text-[var(--color-navy)] font-black mb-4 leading-tight [@media(max-width:1000px)]:text-[1.6rem]">
+              <h3 className="text-[2rem] text-[var(--color-navy)] font-black mb-5 leading-tight [@media(max-width:1000px)]:text-[1.6rem]">
                 {m.name}
               </h3>
-              <p className="text-[var(--color-primary)] text-lg font-black mb-5 leading-snug">
-                {m.catchphrase}
-              </p>
               <p className="text-[0.95rem] font-bold text-[var(--color-text-muted)] mb-7 leading-[1.9]">
                 {m.details.map((d, i) => (
                   <span key={d}>

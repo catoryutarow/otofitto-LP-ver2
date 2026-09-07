@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { cta } from "@/lib/data";
 import { asset } from "@/lib/asset";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 // Hand-drawn speech bubble — uses /bubble.png as a stretched background so the
 // text drives the size. The png is 512×160 (≈16:5) with a tail at the
@@ -77,7 +78,7 @@ export function Hero() {
               className="relative aspect-[3/4] bg-white"
               style={{ clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0 100%)" }}
             >
-              <Image
+              <ResponsiveImage
                 src={p.src}
                 alt=""
                 fill
@@ -100,11 +101,10 @@ export function Hero() {
         { src: "/peoples/note-single.png", top: "58%", left: "3%",  w: "w-6 md:w-8 lg:w-10",   rot: "24deg"  },
         { src: "/peoples/note-double.png", top: "62%", left: "92%", w: "w-8 md:w-10 lg:w-12",  rot: "-15deg" },
       ].map((n, i) => (
-        <Image
+        <ResponsiveImage
           key={i}
           src={n.src}
           alt=""
-          aria-hidden
           width={120}
           height={120}
           style={{ top: n.top, left: n.left, transform: `rotate(${n.rot})` }}
@@ -178,7 +178,7 @@ export function Hero() {
                 className="relative aspect-[3/4] bg-white"
                 style={{ clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0 100%)" }}
               >
-                <Image
+                <ResponsiveImage
                   src={p.src}
                   alt=""
                   fill
@@ -234,11 +234,10 @@ export function Hero() {
           { src: "/peoples/note-double.png", top: "70%", left: "85%", w: "w-6",  rot: "12deg"  },
           { src: "/peoples/note-single.png", top: "78%", left: "2%",  w: "w-5",  rot: "26deg"  },
         ].map((n, i) => (
-          <Image
+          <ResponsiveImage
             key={`spnote-${i}`}
             src={n.src}
             alt=""
-            aria-hidden
             width={80}
             height={80}
             style={{ top: n.top, left: n.left, transform: `rotate(${n.rot})` }}
@@ -252,7 +251,7 @@ export function Hero() {
             className="absolute w-[14%] aspect-[3/4] [@media(max-width:1000px)]:w-[26%] z-10"
             style={{ top: c.top, left: c.left }}
           >
-            <Image
+            <ResponsiveImage
               src={c.src}
               alt=""
               fill

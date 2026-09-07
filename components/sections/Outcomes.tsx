@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionTitleBadge } from "@/components/SectionTitleBadge";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { benefits } from "@/lib/data";
 
 export function Outcomes() {
@@ -12,10 +12,10 @@ export function Outcomes() {
           <SectionTitleBadge align="left">経営者が得られる成果</SectionTitleBadge>
           <div className="hidden md:flex items-end gap-2 shrink-0">
             <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
-              <Image src="/peoples/c3-green-girl.png" alt="" fill className="object-contain object-bottom" />
+              <ResponsiveImage src="/peoples/c3-green-girl.png" alt="" fill className="object-contain object-bottom" />
             </div>
             <div className="relative w-[90px] h-[110px] lg:w-[110px] lg:h-[130px] xl:w-[130px] xl:h-[150px]">
-              <Image src="/peoples/c2-grey-walk.png" alt="" fill className="object-contain object-bottom" />
+              <ResponsiveImage src="/peoples/c2-grey-walk.png" alt="" fill className="object-contain object-bottom" />
             </div>
           </div>
         </div>
