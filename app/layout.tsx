@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import {
   Inter,
   Noto_Sans_JP,
@@ -53,20 +54,6 @@ export const metadata: Metadata = {
   title: "オトフィット (OTOFITTO) | 音楽 × フィットネス ウェルネス体験",
   description:
     "世界チャンピオンがあなたの会社に来る。音楽とフィットネスを融合させた、社員が自然に動く参加型ウェルネス体験「オトフィット」。",
-  // Search-engine deflection: site is in preview / not ready for public indexing
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-    googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "none",
-      "max-snippet": -1,
-    },
-  },
 };
 
 export default function RootLayout({
@@ -79,7 +66,23 @@ export default function RootLayout({
       lang="ja"
       className={`${inter.variable} ${notoSansJP.variable} ${mplus1.variable} ${yomogi.variable} ${yusei.variable} ${reggae.variable} ${rampart.variable} ${shippori.variable} ${hachimaru.variable} ${dotgothic.variable} ${rocknroll.variable} ${kaiseidecol.variable}`}
     >
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+        {/* Google Analytics (gtag.js) — afterInteractive で読み込み、
+            ファーストペイントを阻害しないように配置 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-25HYJ9EDT3"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-25HYJ9EDT3');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
