@@ -46,12 +46,10 @@ export function Header() {
             </a>
           ))}
           <a
-            href={cta.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#docs"
             className="bg-[var(--color-navy)] text-white font-black text-sm px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
           >
-            無料体験
+            資料DL（無料）
           </a>
           {/* 運営元: 株式会社スポルアップ — ロゴで独立帰属表示 */}
           <a
@@ -115,13 +113,20 @@ export function Header() {
             </a>
           ))}
           <a
+            href="#docs"
+            onClick={() => setOpen(false)}
+            className="mt-5 inline-flex justify-center items-center bg-[var(--color-navy)] text-white font-black text-base py-3.5 rounded-xl"
+          >
+            導入資料をダウンロード（無料）
+          </a>
+          <a
             href={cta.url}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="mt-5 inline-flex justify-center items-center bg-[var(--color-navy)] text-white font-black text-base py-3.5 rounded-xl"
+            className="mt-3 inline-flex justify-center items-center border-2 border-[var(--color-navy)] text-[var(--color-navy)] font-black text-base py-3 rounded-xl"
           >
-            無料体験を申し込む
+            無料体験・相談
           </a>
           {/* 運営元: 株式会社スポルアップ */}
           <a

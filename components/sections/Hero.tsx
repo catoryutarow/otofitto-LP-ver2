@@ -138,36 +138,54 @@ export function Hero() {
 
       {/* === MIDDLE: 見出し（ロゴ直下） + 本文 + CTA + キャッチ右上スタンプ === */}
       <div className="w-full max-w-[1100px] mx-auto px-6 md:px-12 text-center relative z-10">
-        <h1 className="text-[2.5rem] md:text-[3.6rem] xl:text-[4.1rem] leading-[1.2] mb-6 font-black text-[var(--color-navy)] [@media(max-width:1000px)]:text-[1.95rem] [@media(max-width:1000px)]:leading-[1.3]">
-          <span className="relative inline-block whitespace-nowrap">
-            <span className="relative z-10">音楽 × フィットネス</span>
-            <span
-              aria-hidden
-              className="absolute left-0 right-0 bottom-1 h-4 md:h-5 bg-[var(--color-secondary)] -z-0 [@media(max-width:1000px)]:h-3"
-            />
+        {/* 広告実測でCTR最上位だった「世界チャンピオン/世界レベル」フックに
+            ファーストビューを一致させる (「音楽×フィットネス」系見出しは
+            広告では最弱 CTR だったため主見出しから降格)。 */}
+        <h1 className="text-[2.5rem] md:text-[3.6rem] xl:text-[4.1rem] leading-[1.2] mb-6 font-black text-[var(--color-navy)] [@media(max-width:1000px)]:text-[1.65rem] [@media(max-width:1000px)]:leading-[1.35]">
+          <span className="whitespace-nowrap">
+            <span className="relative inline-block">
+              <span className="relative z-10">世界チャンピオン</span>
+              <span
+                aria-hidden
+                className="absolute left-0 right-0 bottom-1 h-4 md:h-5 bg-[var(--color-secondary)] -z-0 [@media(max-width:1000px)]:h-3"
+              />
+            </span>
+            が、
           </span>
-          の
           <br />
-          新しい研修
+          <span className="whitespace-nowrap">あなたの会社に来る。</span>
         </h1>
 
         <p className="mb-9 font-bold text-[var(--color-navy)] leading-[1.85] text-[0.95rem] md:text-[clamp(0.9rem,_1vw,_1.15rem)]">
-          社員が一体になる、
+          音楽 × 体操の新感覚・参加型ウェルネス研修「オトフィット」。
           <br />
-          ライブ感あふれる体験型ウェルネス研修。
+          世界レベルの専門家が、社員が自然に動き出す時間をつくります。
         </p>
 
-        <a
-          href={cta.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center bg-[var(--color-navy)] text-white font-black text-base md:text-lg px-8 py-4 rounded-xl hover:opacity-90 transition-opacity"
-        >
-          無料体験を申し込む
-          <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
+        {/* 縦積み・中央揃え: 横並びだと左右の絶対配置 (講師写真 top-46% /
+            吹き出し top-46%) と重なるため、中央レーン (幅 ~40%) に収める。 */}
+        <div className="flex flex-col items-center gap-4">
+          <a
+            href="#docs"
+            className="inline-flex items-center justify-center whitespace-nowrap bg-[var(--color-navy)] text-white font-black text-base md:text-lg px-8 py-4 rounded-xl hover:opacity-90 transition-opacity [@media(max-width:1000px)]:text-[0.95rem] [@media(max-width:1000px)]:px-5"
+          >
+            導入資料をダウンロード（無料）
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+          <a
+            href={cta.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center border-2 border-[var(--color-navy)] text-[var(--color-navy)] font-black text-base md:text-lg px-8 py-[14px] rounded-xl hover:bg-[var(--color-navy)] hover:text-white transition-colors"
+          >
+            無料体験・相談
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
 
         {/* SP only — instructor portraits (left) + smaller bubble (right) */}
         <div className="lg:hidden flex items-center gap-4 md:gap-6 mt-8 max-w-[460px] md:max-w-[640px] mx-auto">
@@ -194,8 +212,8 @@ export function Hero() {
                 className="block text-[0.78rem] md:text-[1.05rem] leading-[1.4] text-[var(--color-navy)] font-bold whitespace-nowrap"
                 style={{ fontFamily: "var(--font-rocknroll)" }}
               >
-                <span className="block -translate-x-3.5">世界チャンピオンが、</span>
-                <span className="block">あなたの会社に来る<span className="tracking-[-0.2em]">！？</span></span>
+                <span className="block -translate-x-3.5">新感覚！参加型の</span>
+                <span className="block">ウェルネス体験<span className="tracking-[-0.2em]">！！</span></span>
               </span>
             </SpeechBubble>
           </div>
@@ -214,8 +232,8 @@ export function Hero() {
             className="block text-[1.3rem] xl:text-[1.55rem] leading-[1.55] text-[var(--color-navy)] font-bold whitespace-nowrap"
             style={{ fontFamily: "var(--font-rocknroll)" }}
           >
-            <span className="block -translate-x-5 md:-translate-x-6">世界チャンピオンが、</span>
-            <span className="block">あなたの会社に来る<span className="tracking-[-0.2em]">！？</span></span>
+            <span className="block -translate-x-5 md:-translate-x-6">新感覚！参加型の</span>
+            <span className="block">ウェルネス体験<span className="tracking-[-0.2em]">！！</span></span>
           </span>
         </SpeechBubble>
       </div>

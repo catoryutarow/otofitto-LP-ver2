@@ -236,3 +236,18 @@ export const cta = {
   email: { value: "info@spollup.jp", href: "mailto:info@spollup.jp" },
   url: "https://spollup.jp/contact/",
 };
+
+// === 資料請求 (マイクロCV) ====================================================
+// formbase 上の資料請求専用フォーム。送信完了時に iframe から親ページへ
+// postMessage が飛び、DocRequest セクションの listener が GA4 イベント
+// `document_request` を発火する (お問い合わせの generate_lead とは別イベント)。
+export const docRequest = {
+  formUrl: "https://formbase.jp/spollup/otofitto-docs",
+  formName: "otofitto-docs",
+  contents: [
+    "プログラム構成と当日の流れ",
+    "料金の目安・実施パターン",
+    "世界レベルのコーチ陣の紹介",
+    "導入の効果と参加者の声",
+  ],
+};

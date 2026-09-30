@@ -68,12 +68,21 @@ export function CTA() {
           ))}
         </div>
 
-        <div className="mt-12 [@media(max-width:1000px)]:mt-10">
+        <div className="mt-12 [@media(max-width:1000px)]:mt-10 flex flex-col sm:flex-row items-start gap-4">
+          <a
+            href="#docs"
+            className="inline-flex items-center justify-center bg-[var(--color-navy)] text-white font-black text-base md:text-lg px-8 py-4 rounded-xl hover:opacity-90 transition-opacity"
+          >
+            導入資料をダウンロード（無料）
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
           <a
             href={cta.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-[var(--color-navy)] text-white font-black text-base md:text-lg px-8 py-4 rounded-xl hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center border-2 border-[var(--color-navy)] text-[var(--color-navy)] font-black text-base md:text-lg px-8 py-[14px] rounded-xl hover:bg-[var(--color-navy)] hover:text-white transition-colors"
           >
             無料体験を申し込む
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

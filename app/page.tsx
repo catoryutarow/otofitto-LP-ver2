@@ -6,6 +6,7 @@ import { MusicSupport } from "@/components/sections/MusicSupport";
 import { MovingTeam } from "@/components/sections/MovingTeam";
 import { Outcomes } from "@/components/sections/Outcomes";
 import { Details } from "@/components/sections/Details";
+import { DocRequest } from "@/components/sections/DocRequest";
 import { RelatedService } from "@/components/sections/RelatedService";
 import { CompanyInfo } from "@/components/sections/CompanyInfo";
 import { CTA } from "@/components/sections/CTA";
@@ -32,7 +33,9 @@ export default function Page() {
       <MovingTeam />
       <SectionCurve from={LIGHT} to={WHITE} variant="waveLR" />
       <Outcomes />
-      <SectionCurve from={WHITE} to={LIGHT} variant="sag" />
+      <SectionCurve from={WHITE} to={GOLD} variant="sag" />
+      <DocRequest />
+      <SectionCurve from={GOLD} to={LIGHT} variant="waveRL" />
       <Details />
       <SectionCurve from={LIGHT} to={GOLD} variant="waveRL" />
       <RelatedService />
