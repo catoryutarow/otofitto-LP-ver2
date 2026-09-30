@@ -40,6 +40,9 @@ const WEBP_QUALITY = 80;
 // 例: inoue.jpg は元解像度が小さく (1200x800) 圧縮余地が少ないため除外。
 const SKIP_FILES = new Set([
   "inoue.jpg",
+  // inoue.png は inoue.jpg と basename が衝突し、201px の png から生成した
+  // webp が jpg 由来の高解像度 webp (1200px) を上書きしてしまうため除外。
+  "inoue.png",
 ]);
 
 async function exists(p) {
